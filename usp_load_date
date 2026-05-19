@@ -1,0 +1,111 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE OR ALTER   PROCEDURE [<your schema>].[usp_load_date]
+    @start_date DATE = '2023-01-01'
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET DATEFIRST 7;  -- Sunday = 1
+
+    -- End date: 12/31 of current year.
+    -- On Dec 31, rolls forward to 12/31 of next year so no gap occurs on year rollover.
+    DECLARE @end_date  DATE = DATEFROMPARTS(YEAR(DATEADD(DAY, 1, GETDATE())), 12, 31);
+    DECLARE @anchor    DATE = '2023-01-01';
+    DECLARE @start1900 DATE = '1900-01-01';
+    DECLARE @today     DATE = CAST(GETDATE() AS DATE);
+    DECLARE @start_int INT  = CAST(CAST(@start_date AS DATETIME) AS INT);
+    DECLARE @end_int   INT  = CAST(CAST(@end_date   AS DATETIME) AS INT);
+
+    DECLARE @today_selling_day_num INT =
+        (DATEDIFF(day, @start1900, @today) + 1)
+        - (DATEDIFF(week, @start1900, @today) * 2)
+        - CASE WHEN DATEPART(weekday, @today) = 7 THEN 1 ELSE 0 END;
+
+    TRUNCATE TABLE gold.dim_date;
+
+    WITH cte_days AS (
+        SELECT CAST(CAST(value AS DATETIME) AS DATE) AS actual_date
+        FROM GENERATE_SERIES(@start_int, @end_int, 1)
+    )
+    INSERT INTO <your_schema>.dim_date (
+        [date]
+        , [year]
+        , week_number
+        , day_of_week_name
+        , day_of_week_short_name
+        , day_of_week
+        , date_index
+        , wnumber
+        , wnumber_sort
+        , week_number_year
+        , week_ending
+        , [quarter]
+        , year_quarter_sort
+        , quarter_year
+        , month_num
+        , month_name_short
+        , month_name_long
+        , month_year_sort
+        , month_year
+        , month_year_long
+        , wk_index
+        , day_of_month
+        , selling_day
+        , selling_day_offset
+        , week_offset
+        , month_offset
+        , quarter_offset
+        , trimester_offset
+        , year_offset
+    )
+    SELECT
+        actual_date
+        , YEAR(actual_date)
+        , DATEPART(week, actual_date)
+        , DATENAME(weekday, actual_date)
+        , LEFT(DATENAME(weekday, actual_date), 3)
+        , DATEPART(weekday, actual_date)
+        , DATEDIFF(day, @anchor, actual_date) + 1
+        , 'W' + RIGHT('00' + CAST(DATEPART(week, actual_date) AS VARCHAR(2)), 2)
+        , YEAR(actual_date) * 100 + DATEPART(week, actual_date)
+        , 'W' + RIGHT('00' + CAST(DATEPART(week, actual_date) AS VARCHAR(2)), 2)
+          + '-' + RIGHT(CAST(YEAR(actual_date) AS VARCHAR(4)), 2)
+        , DATEADD(DAY, 6 - DATEPART(WEEKDAY, actual_date) + 1, actual_date)
+        , 'Q' + CAST(DATEPART(quarter, actual_date) AS VARCHAR(1))
+        , YEAR(actual_date) * 100 + DATEPART(quarter, actual_date)
+        , 'Q' + CAST(DATEPART(quarter, actual_date) AS VARCHAR(1))
+          + '-' + RIGHT(CAST(YEAR(actual_date) AS VARCHAR(4)), 2)
+        , MONTH(actual_date)
+        , LEFT(DATENAME(month, actual_date), 3)
+        , DATENAME(month, actual_date)
+        , YEAR(actual_date) * 100 + MONTH(actual_date)
+        , LEFT(DATENAME(month, actual_date), 3) + '-' + RIGHT(CAST(YEAR(actual_date) AS VARCHAR(4)), 2)
+        , LEFT(DATENAME(month, actual_date), 3) + '-' + CAST(YEAR(actual_date) AS VARCHAR(4))
+        , DATEDIFF(week, @anchor, actual_date) + 1
+        , DAY(actual_date)
+        , CASE WHEN DATENAME(WEEKDAY, actual_date) IN ('Saturday','Sunday') THEN 0 ELSE 1 END
+        , CASE
+            WHEN DATEPART(weekday, actual_date) BETWEEN 2 AND 6
+            THEN (
+                    (DATEDIFF(day, @start1900, actual_date) + 1)
+                    - (DATEDIFF(week, @start1900, actual_date) * 2)
+                    - CASE WHEN DATEPART(weekday, actual_date) = 7 THEN 1 ELSE 0 END
+                 ) - @today_selling_day_num
+            ELSE NULL
+          END
+        , DATEDIFF(week,    @today, actual_date)
+        , DATEDIFF(month,   @today, actual_date)
+        , DATEDIFF(quarter, @today, actual_date)
+        , (YEAR(actual_date) - YEAR(@today)) * 3
+          + CAST(CEILING(CAST(MONTH(actual_date) AS FLOAT) / 4.0) AS INT)
+          - CAST(CEILING(CAST(MONTH(@today)      AS FLOAT) / 4.0) AS INT)
+        , DATEDIFF(year,    @today, actual_date)
+    FROM cte_days;
+
+    DECLARE @rows INT = @@ROWCOUNT;
+    PRINT 'gold.usp_load_gold_date: ' + CAST(@rows AS VARCHAR) + ' rows loaded ('
+          + CAST(@start_date AS VARCHAR(10)) + ' to ' + CAST(@end_date AS VARCHAR(10)) + ')';
+END;
+GO
