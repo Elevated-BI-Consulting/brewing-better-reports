@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "brewing-better-reports-demo"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "233d6d43-01ec-4be8-9e64-6e334e183057"
+  }
+}

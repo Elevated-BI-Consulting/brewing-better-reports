@@ -27,6 +27,7 @@ ref table LocalDateTable_9410d9cc-0d43-46c6-83c5-013d5f5e3419
 ref table LocalDateTable_c6f91ebc-1d2b-45b2-99ba-fd9488161b9d
 ref table 'Key Date Dimensions'
 ref table 'Key Measures'
+ref table 'Date Category'
 
 ref cultureInfo en-US
 

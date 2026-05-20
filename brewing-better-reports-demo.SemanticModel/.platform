@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "brewing-better-reports-demo"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4c7e5693-8cfc-4fc8-aab5-0dc82738598e"
+  }
+}
