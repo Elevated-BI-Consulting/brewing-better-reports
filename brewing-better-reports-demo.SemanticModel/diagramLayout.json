@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 907,
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 176,
-            "y": 8
+            "x": 1596,
+            "y": 19.875
           },
           "nodeIndex": "Account",
           "nodeLineageTag": "ded9860c-d6db-4ccc-b4bf-ccdaac5da3df",
@@ -19,12 +19,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
-            "x": 360,
-            "y": 415
+            "x": 1780,
+            "y": 426.875
           },
           "nodeIndex": "Invoice",
           "nodeLineageTag": "8f8e7454-e080-4b7d-992c-c1a39e164594",
@@ -32,12 +32,12 @@
             "height": 296,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 475,
-            "y": 11
+            "x": 1895,
+            "y": 22.875
           },
           "nodeIndex": "Item",
           "nodeLineageTag": "3c34bbea-52dd-4abe-afaa-946e8a5f52cc",
@@ -45,12 +45,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 792,
-            "y": 5
+            "x": 2212,
+            "y": 16.875
           },
           "nodeIndex": "Date",
           "nodeLineageTag": "b800d85d-57b1-4d00-85c4-cd9dcf04be38",
@@ -58,7 +58,84 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 288.875
+          },
+          "nodeIndex": "Key Date Dimensions",
+          "nodeLineageTag": "d51c79f5-5028-4374-82b0-18f3c09b4acf",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 288.875
+          },
+          "nodeIndex": "Key Dimensions",
+          "nodeLineageTag": "9092ff2e-2865-4ea6-8c93-4e7a52fac16b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 288.875
+          },
+          "nodeIndex": "Key Measures",
+          "nodeLineageTag": "de1f5a95-1775-4ef5-a124-2794308bc434",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 288.875
+          },
+          "nodeIndex": "Parameter-TimePeriods",
+          "nodeLineageTag": "742dc17b-0f73-4fa4-a9aa-259a5e4218d0",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 276.875
+          },
+          "nodeIndex": "Time Period",
+          "nodeLineageTag": "046259f3-1328-4c62-bc95-7ac91c1e56fd",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 2496,
+            "y": 262.375
+          },
+          "nodeIndex": "Date Category",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 10
         }
       ],
       "name": "All tables",

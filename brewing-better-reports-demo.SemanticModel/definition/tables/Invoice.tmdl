@@ -190,83 +190,110 @@ table Invoice
 
 	column InvoiceTransID
 		dataType: int64
+		isHidden
 		displayFolder: Columns
 		lineageTag: 2cb6b067-ea4a-4461-83a6-89d8cb3076c2
 		summarizeBy: count
 		sourceColumn: InvoiceTransID
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Invoice Code'
 		dataType: int64
+		isHidden
 		displayFolder: Columns
 		lineageTag: 6828b4f9-9870-41fd-aeb5-c077c710da3a
 		summarizeBy: count
 		sourceColumn: Invoice Code
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Invoice Date'
 		dataType: dateTime
+		isHidden
 		formatString: M/d/yyyy
 		displayFolder: Columns
 		lineageTag: bb672303-9ef0-406d-8c36-9577deefa4e6
 		summarizeBy: none
 		sourceColumn: Invoice Date
 
+		changedProperty = IsHidden
+
 		annotation UnderlyingDateTimeDataType = Date
 
 	column CustomerID
 		dataType: int64
+		isHidden
 		displayFolder: Columns
 		lineageTag: 9c134e23-469d-4c72-b718-010df7f23991
 		summarizeBy: none
 		sourceColumn: CustomerID
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column ProductID
 		dataType: int64
+		isHidden
 		displayFolder: Columns
 		lineageTag: cb6a7139-c183-4a7b-a4e0-1a0821facc2c
 		summarizeBy: none
 		sourceColumn: ProductID
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Units
 		dataType: int64
+		isHidden
 		displayFolder: Columns
 		lineageTag: a23e815c-4d88-48aa-b80e-51be4d2c071c
 		summarizeBy: sum
 		sourceColumn: Units
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column MSRP
 		dataType: double
+		isHidden
 		displayFolder: Columns
 		lineageTag: 318882b0-bdae-418b-b03e-1c6aa5cfe54e
 		summarizeBy: sum
 		sourceColumn: MSRP
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column UnitPrice
 		dataType: double
+		isHidden
 		displayFolder: Columns
 		lineageTag: 945a1cc6-8339-4c0b-b2ac-a19eeb8617cf
 		summarizeBy: sum
 		sourceColumn: UnitPrice
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column ExtPrice
 		dataType: double
+		isHidden
 		displayFolder: Columns
 		lineageTag: 114e1ee8-e5b4-4cb8-b6f1-77890e02a823
 		summarizeBy: sum
 		sourceColumn: ExtPrice
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

@@ -1,0 +1,421 @@
+table 'Date Category'
+	lineageTag: 6975fe86-362f-49b2-8688-62835c93fbaf
+
+	column Date
+		isHidden
+		formatString: Short Date
+		lineageTag: b7b690fd-2a97-4658-bca7-cded64fcb438
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Category'
+		lineageTag: feeadf4b-daef-4e00-9ae7-a6d52d479b49
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date Category]
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		formatString: 0
+		lineageTag: 979e4003-784d-4e5d-b5e9-501509c4ce2a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Filter Category'
+		lineageTag: feea71b4-6777-47d7-bcd3-bb43131da587
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Filter Category]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Category' = calculated
+		mode: import
+		source = ```
+				
+				VAR _Today = DATE ( 2026, 03, 25 ) --  TODAY() - 1
+				VAR _CurrentMonth = MONTH(_Today)
+				VAR _CurrentYear = YEAR(_Today)
+				
+				-- Start of Current Quarter
+				VAR _CurrentQuarterStart = DATE(_CurrentYear, (CEILING(_CurrentMonth, 3) - 2), 1)
+				
+				-- End of Current Quarter
+				VAR _EndOfCurrentQuarter = 
+				    IF(
+				        _CurrentMonth <= 3, DATE(_CurrentYear, 3, 31), 
+				        IF(_CurrentMonth <= 6, DATE(_CurrentYear, 6, 30), 
+				        IF(_CurrentMonth <= 9, DATE(_CurrentYear, 9, 30), 
+				        DATE(_CurrentYear, 12, 31)))
+				    )
+				
+				-- Start/End of Previous Quarter
+				VAR _PreviousQuarterStart = DATE(_CurrentYear, (CEILING(_CurrentMonth, 3) - 2) - 3, 1)
+				VAR _EndOfPreviousQuarter = _CurrentQuarterStart - 1
+				
+				-- Start/End of Next Quarter
+				VAR _NextQuarterStart = DATE(_CurrentYear, (CEILING(_CurrentMonth, 3) - 2) + 3, 1)
+				VAR _EndOfNextQuarter = _NextQuarterStart + 89
+				
+				-- End of Current Month
+				VAR _EndOfCurrentMonth = EOMONTH(_Today, 0)
+				
+				-- End of Current Year
+				VAR _EndOfCurrentYear = DATE(_CurrentYear, 12, 31)
+				
+				-- Start/End of Previous Month
+				VAR _StartOfPreviousMonth = EDATE(DATE(_CurrentYear, _CurrentMonth, 1), -1)
+				VAR _EndOfPreviousMonth = EOMONTH(_StartOfPreviousMonth, 0)
+				
+				-- Start/End of Next Month
+				VAR _StartOfNextMonth = EDATE(DATE(_CurrentYear, _CurrentMonth, 1), 1)
+				VAR _EndOfNextMonth = EOMONTH(_StartOfNextMonth, 0)
+				
+				-- Start/End of Current Week
+				VAR _StartOfWeek = _Today - WEEKDAY(_Today, 1) + 1
+				VAR _EndOfWeek = _StartOfWeek + 6
+				
+				-- Start/End of Previous Week
+				VAR _StartOfPreviousWeek = _StartOfWeek - 7
+				VAR _EndOfPreviousWeek = _StartOfWeek - 1
+				
+				-- Start/End of Next Week
+				VAR _StartOfNextWeek = _StartOfWeek + 7
+				VAR _EndOfNextWeek = _StartOfWeek + 13
+				
+				-- Earliest Date for All Time calculations
+				VAR _EarliestDate = DATE(2000, 1, 1)
+				
+				-- Buffer day constants
+				VAR _QuarterBufferDays = 20
+				VAR _WeekBufferDays = 2
+				VAR _MonthBufferDays = 5
+				VAR _YearBufferDays = 40
+				
+				-- Helper variables for current periods
+				VAR _StartOfCurrentMonth = DATE(_CurrentYear, _CurrentMonth, 1)
+				VAR _StartOfCurrentYear = DATE(_CurrentYear, 1, 1)
+				
+				-- Helper variables for previous periods used in buffers
+				VAR _StartOfPreviousYear = DATE(_CurrentYear - 1, 1, 1)
+				VAR _EndOfPreviousYear = DATE(_CurrentYear - 1, 12, 31)
+				
+				-- Buffered Period Calculations
+				-- Current Quarter with 20 Day Buffer
+				VAR _CurrentQuarterStartBuffered = 
+				    IF(_Today >= _CurrentQuarterStart + _QuarterBufferDays, _CurrentQuarterStart, _PreviousQuarterStart)
+				VAR _EndOfCurrentQuarterBuffered = 
+				    IF(_Today >= _CurrentQuarterStart + _QuarterBufferDays, _EndOfCurrentQuarter, _EndOfPreviousQuarter)
+				
+				-- Current Week with 2 Day Buffer
+				VAR _StartOfWeekBuffered = 
+				    IF(_Today >= _StartOfWeek + _WeekBufferDays, _StartOfWeek, _StartOfPreviousWeek)
+				VAR _EndOfWeekBuffered = 
+				    IF(_Today >= _StartOfWeek + _WeekBufferDays, _EndOfWeek, _EndOfPreviousWeek)
+				
+				-- Current Month with 5 Day Buffer
+				VAR _StartOfMonthBuffered = 
+				    IF(_Today >= _StartOfCurrentMonth + _MonthBufferDays, _StartOfCurrentMonth, _StartOfPreviousMonth)
+				VAR _EndOfMonthBuffered = 
+				    IF(_Today >= _StartOfCurrentMonth + _MonthBufferDays, _EndOfCurrentMonth, _EndOfPreviousMonth)
+				
+				-- Current Year with 40 Day Buffer
+				VAR _StartOfYearBuffered = 
+				    IF(_Today >= _StartOfCurrentYear + _YearBufferDays, _StartOfCurrentYear, _StartOfPreviousYear)
+				VAR _EndOfYearBuffered = 
+				    IF(_Today >= _StartOfCurrentYear + _YearBufferDays, _EndOfCurrentYear, _EndOfPreviousYear)
+				
+				
+				RETURN
+				UNION (
+				
+				    -- Current Week
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfWeek, _EndOfWeek),
+				        "Date Category", "Current Week",
+				        "Order", 1,
+				        "Filter Category", "Week"
+				    ),
+				
+				     -- Previous Week
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfPreviousWeek, _EndOfPreviousWeek),
+				        "Date Category", "Previous Week",
+				        "Order", 2,
+				        "Filter Category", "Week"
+				    ),
+				
+				    -- Next Week
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfNextWeek, _EndOfNextWeek),
+				        "Date Category", "Next Week",
+				        "Order", 3,
+				        "Filter Category", "Week"
+				    ),
+				
+				    -- Current Month
+				    ADDCOLUMNS(
+				        CALENDAR(DATE(_CurrentYear, _CurrentMonth, 1), _EndOfCurrentMonth),
+				        "Date Category", "Current Month",
+				        "Order", 4,
+				        "Filter Category", "Month"
+				    ),
+				
+				    -- Previous Month
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfPreviousMonth, _EndOfPreviousMonth),
+				        "Date Category", "Previous Month",
+				        "Order", 5,
+				        "Filter Category", "Month"
+				    ),
+				
+				    -- Next Month
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfNextMonth, _EndOfNextMonth),
+				        "Date Category", "Next Month",
+				        "Order", 6,
+				        "Filter Category", "Month"
+				    ),
+				
+				    -- Current Quarter
+				    ADDCOLUMNS(
+				        CALENDAR(_CurrentQuarterStart, _EndOfCurrentQuarter),
+				        "Date Category", "Current Quarter",
+				        "Order", 7,
+				        "Filter Category", "Quarter"
+				    ),
+				
+				    -- Previous Quarter
+				    ADDCOLUMNS(
+				        CALENDAR(_PreviousQuarterStart, _EndOfPreviousQuarter),
+				        "Date Category", "Previous Quarter", 
+				        "Order", 8,
+				        "Filter Category", "Quarter"
+				    ),
+				
+				    -- Next Quarter
+				    ADDCOLUMNS(
+				        CALENDAR(_NextQuarterStart, _EndOfNextQuarter),
+				        "Date Category", "Next Quarter",
+				        "Order", 9,
+				        "Filter Category", "Quarter"
+				    ),
+				
+				    -- Current Year
+				    ADDCOLUMNS(
+				        CALENDAR(DATE(_CurrentYear, 1, 1), _EndOfCurrentYear),
+				        "Date Category", "Current Year",
+				        "Order", 10,
+				        "Filter Category", "Year"
+				    ),
+				
+				    -- Previous Year
+				    ADDCOLUMNS(
+				        CALENDAR(DATE(_CurrentYear - 1, 1, 1), DATE(_CurrentYear - 1, 12, 31)),
+				        "Date Category", "Previous Year",
+				        "Order", 11,
+				        "Filter Category", "Year"
+				    ),
+				
+				    -- Next Year
+				    ADDCOLUMNS(
+				        CALENDAR(DATE(_CurrentYear + 1, 1, 1), DATE(_CurrentYear + 1, 12, 31)),
+				        "Date Category", "Next Year",
+				        "Order", 12,
+				        "Filter Category", "Year"
+				    ),
+				
+				    -- WTD
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfWeek, _Today),
+				        "Date Category", "WTD",
+				        "Order", 13,
+				        "Filter Category", "To-Date"
+				    ),
+				
+				    -- MTD
+				    ADDCOLUMNS(
+				        CALENDAR(DATE(_CurrentYear, _CurrentMonth, 1), _Today),
+				        "Date Category", "MTD", 
+				        "Order", 14,
+				        "Filter Category", "To-Date"
+				    ),
+				
+				    -- QTD
+				    ADDCOLUMNS(
+				        CALENDAR(_CurrentQuarterStart, _Today),
+				        "Date Category", "QTD",
+				        "Order", 15,
+				        "Filter Category", "To-Date"
+				    ),
+				
+				    -- YTD
+				    ADDCOLUMNS(
+				        CALENDAR(DATE(_CurrentYear, 1, 1), _Today),
+				        "Date Category", "YTD",
+				        "Order", 16,
+				        "Filter Category", "To-Date"
+				    ),
+				
+				    -- Last 7 Days
+				    ADDCOLUMNS(
+				        CALENDAR(_Today - 7, _Today),
+				        "Date Category", "T-7 Days",
+				        "Order", 17,
+				        "Filter Category", "Rolling"
+				    ),
+				
+				    -- Last 30 Days
+				    ADDCOLUMNS(
+				        CALENDAR(_Today - 30, _Today),
+				        "Date Category", "T-30 Days",
+				        "Order", 18,
+				        "Filter Category", "Rolling"
+				    ),
+				
+				    -- Last 60 Days
+				    ADDCOLUMNS(
+				        CALENDAR(_Today - 60, _Today),
+				        "Date Category", "T-60 Days",
+				        "Order", 19,
+				        "Filter Category", "Rolling"
+				    ),
+				
+				    -- Last 90 Days
+				    ADDCOLUMNS(
+				        CALENDAR(_Today - 90, _Today),
+				        "Date Category", "T-90 Days",
+				        "Order", 20,
+				        "Filter Category", "Rolling"
+				    ),
+				
+				    -- Last 180 Days
+				    ADDCOLUMNS(
+				        CALENDAR(_Today - 180, _Today),
+				        "Date Category", "T-180 Days",
+				        "Order", 21,
+				        "Filter Category", "Rolling"
+				    ),
+				
+				    -- Last 364 Days
+				    ADDCOLUMNS(
+				        CALENDAR(_Today - 364, _Today),
+				        "Date Category", "T-364 Days",
+				        "Order", 22,
+				        "Filter Category", "Rolling"
+				    ),
+				
+				    -- Completed Weeks
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, _EndOfPreviousWeek),
+				        "Date Category", "Completed Weeks",
+				        "Order", 23,
+				        "Filter Category", "Completed"
+				    ),
+				
+				    -- Completed Months
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, _EndOfPreviousMonth),
+				        "Date Category", "Completed Months",
+				        "Order", 24,
+				        "Filter Category", "Completed"
+				    ),
+				
+				    -- Completed Quarters
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, _EndOfPreviousQuarter),
+				        "Date Category", "Completed Quarters",
+				        "Order", 25,
+				        "Filter Category", "Completed"
+				    ),
+				
+				    -- Completed Years
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, DATE(_CurrentYear - 1, 12, 31)),
+				        "Date Category", "Completed Years",
+				        "Order", 26,
+				        "Filter Category", "Completed"
+				    ),
+				
+				    -- Up to End of Current Week
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, _EndOfWeek),
+				        "Date Category", "Up to End of Current Week",
+				        "Order", 27,
+				        "Filter Category", "Up To End"
+				    ),
+				
+				    -- Up to End of Current Month
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, _EndOfCurrentMonth),
+				        "Date Category", "Up to End of Current Month",
+				        "Order", 28,
+				        "Filter Category", "Up To End"
+				    ),
+				
+				    -- Up to End of Current Quarter
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, _EndOfCurrentQuarter),
+				        "Date Category", "Up to End of Current Quarter",
+				        "Order", 29,
+				        "Filter Category", "Up To End"
+				    ),
+				
+				    -- Up to End of Current Year
+				    ADDCOLUMNS(
+				        CALENDAR(_EarliestDate, _EndOfCurrentYear),
+				        "Date Category", "Up to End of Current Year",
+				        "Order", 30,
+				        "Filter Category", "Up To End"
+				    ),
+				
+				    -- Current Week (2 Day Buffer)
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfWeekBuffered, _EndOfWeekBuffered),
+				        "Date Category", "Current Week (2 Day Buffer)",
+				        "Order", 31,
+				        "Filter Category", "Buffered"
+				    ),
+				
+				    -- Current Month (5 Day Buffer)
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfMonthBuffered, _EndOfMonthBuffered),
+				        "Date Category", "Current Month (5 Day Buffer)",
+				        "Order", 32,
+				        "Filter Category", "Buffered"
+				    ),
+				
+				    -- Current Quarter (20 Day Buffer)
+				    ADDCOLUMNS(
+				        CALENDAR(_CurrentQuarterStartBuffered, _EndOfCurrentQuarterBuffered),
+				        "Date Category", "Current Quarter (20 Day Buffer)",
+				        "Order", 33,
+				        "Filter Category", "Buffered"
+				    ),
+				
+				    -- Current Year (40 Day Buffer)
+				    ADDCOLUMNS(
+				        CALENDAR(_StartOfYearBuffered, _EndOfYearBuffered),
+				        "Date Category", "Current Year (40 Day Buffer)",
+				        "Order", 34,
+				        "Filter Category", "Buffered"
+				    )
+				)
+				
+				
+				
+				
+				
+				 
+				```
+
+	annotation PBI_Id = 79536163398349f2b8d0a9caf2bfa414
+

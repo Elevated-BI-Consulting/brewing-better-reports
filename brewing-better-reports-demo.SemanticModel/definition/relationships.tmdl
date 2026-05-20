@@ -20,3 +20,8 @@ relationship 54eec9e7-ff78-4a69-af26-3dfab3fc6afd
 	fromColumn: Date.week_ending
 	toColumn: LocalDateTable_c6f91ebc-1d2b-45b2-99ba-fd9488161b9d.Date
 
+relationship 4a86a0a6-3095-778c-0231-4ba21d821299
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date Category'.Date
+	toColumn: Date.date
+
