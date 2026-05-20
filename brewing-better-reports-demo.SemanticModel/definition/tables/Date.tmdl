@@ -1,0 +1,478 @@
+table Date
+	lineageTag: b800d85d-57b1-4d00-85c4-cd9dcf04be38
+
+	column date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: fb829216-cde6-43be-9144-82efb2731aec
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 949a2fb4-d4e9-4a7a-986d-0f838abbcd1d
+			defaultHierarchy: LocalDateTable_9410d9cc-0d43-46c6-83c5-013d5f5e3419.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: eec8ea89-43da-4942-a63b-03d8a35df24b
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_number
+		dataType: int64
+		formatString: 0
+		lineageTag: b1f450e9-3beb-4f32-8d0f-2abb28e95a76
+		summarizeBy: sum
+		sourceColumn: week_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week_name
+		dataType: string
+		lineageTag: b994e7dd-cfcc-4e01-8075-3d29e4cd51e1
+		summarizeBy: none
+		sourceColumn: day_of_week_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week_short_name
+		dataType: string
+		lineageTag: e33723db-f100-4ef9-8419-3a2a23f120d4
+		summarizeBy: none
+		sourceColumn: day_of_week_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c16062c-09b6-44d3-900f-c9aa3696a813
+		summarizeBy: sum
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_index
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a2c5137-2a75-45a2-b6f9-8546d592c710
+		summarizeBy: sum
+		sourceColumn: date_index
+
+		annotation SummarizationSetBy = Automatic
+
+	column wnumber
+		dataType: string
+		lineageTag: 6811fd01-0cab-4af9-9ead-bc75f1e7349a
+		summarizeBy: none
+		sourceColumn: wnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column wnumber_sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 2012f7b4-f87d-4ec7-8fb8-b0bd5c632d1f
+		summarizeBy: sum
+		sourceColumn: wnumber_sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_number_year
+		dataType: string
+		lineageTag: 749d4e25-4458-4cc5-b2b3-c43158c8cda1
+		summarizeBy: none
+		sourceColumn: week_number_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_ending
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 829d51f3-ec2d-4900-8d24-5cd4e93bc997
+		summarizeBy: none
+		sourceColumn: week_ending
+
+		variation Variation
+			isDefault
+			relationship: 54eec9e7-ff78-4a69-af26-3dfab3fc6afd
+			defaultHierarchy: LocalDateTable_c6f91ebc-1d2b-45b2-99ba-fd9488161b9d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column quarter
+		dataType: string
+		lineageTag: f5e2c8d1-287f-47fb-bee6-6a68e803907a
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_quarter_sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 309cdb20-ac0b-4714-9647-a2384d5db16a
+		summarizeBy: sum
+		sourceColumn: year_quarter_sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter_year
+		dataType: string
+		lineageTag: 7e62dff6-86f8-4d9d-91f3-91db4907ed15
+		summarizeBy: none
+		sourceColumn: quarter_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_num
+		dataType: int64
+		formatString: 0
+		lineageTag: c07902da-8d68-4416-8966-4f7023a726e3
+		summarizeBy: sum
+		sourceColumn: month_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name_short
+		dataType: string
+		lineageTag: 22d17427-24a8-4fdc-95f3-67580fedd208
+		summarizeBy: none
+		sourceColumn: month_name_short
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name_long
+		dataType: string
+		lineageTag: af39bb6e-92ab-4da0-9b23-2d45cb645412
+		summarizeBy: none
+		sourceColumn: month_name_long
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_year_sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 62382d8c-9263-43a8-8ffc-e4d4a5f0a069
+		summarizeBy: sum
+		sourceColumn: month_year_sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_year
+		dataType: string
+		lineageTag: 7edf8bc6-361c-4e7e-bb2a-c4fafb51ca80
+		summarizeBy: none
+		sourceColumn: month_year
+		sortByColumn: month_year_sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_year_long
+		dataType: string
+		lineageTag: 5f233bdd-ded9-4e35-b5aa-edfd28afe77a
+		summarizeBy: none
+		sourceColumn: month_year_long
+
+		annotation SummarizationSetBy = Automatic
+
+	column wk_index
+		dataType: int64
+		formatString: 0
+		lineageTag: 38c02a5f-83ce-4fee-a0a6-a25bb8532294
+		summarizeBy: sum
+		sourceColumn: wk_index
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 6695d315-74ab-49b4-ad63-ba3922b2283d
+		summarizeBy: sum
+		sourceColumn: day_of_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column selling_day
+		dataType: int64
+		formatString: 0
+		lineageTag: d5c3133f-be4e-46f6-bd28-897a1c27bc63
+		summarizeBy: sum
+		sourceColumn: selling_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column selling_day_offset
+		dataType: int64
+		formatString: 0
+		lineageTag: acdd0659-6547-4c57-b10c-b57c5e765ccc
+		summarizeBy: sum
+		sourceColumn: selling_day_offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_offset
+		dataType: int64
+		formatString: 0
+		lineageTag: 89b288d6-a317-4ca7-bcf7-99c1ed9ad100
+		summarizeBy: sum
+		sourceColumn: week_offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_offset
+		dataType: int64
+		formatString: 0
+		lineageTag: 6274380a-c86a-4c89-8aa5-b2d7ef8d276e
+		summarizeBy: sum
+		sourceColumn: month_offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter_offset
+		dataType: int64
+		formatString: 0
+		lineageTag: 7740ae20-c62a-44ab-b768-31a48b6f229c
+		summarizeBy: sum
+		sourceColumn: quarter_offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimester_offset
+		dataType: int64
+		formatString: 0
+		lineageTag: a02b1a6c-d77e-4ae1-bb16-f7b935309503
+		summarizeBy: sum
+		sourceColumn: trimester_offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_offset
+		dataType: int64
+		formatString: 0
+		lineageTag: 0fce59d7-2d93-4e6d-8d8d-28ece2e5814c
+		summarizeBy: sum
+		sourceColumn: year_offset
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = m
+		mode: import
+		source =
+				let
+				    // ── Constants ─────────────────────────────────────────────────────────────
+				    // today is hard-coded so offset columns remain accurate in future demos.
+				    // The sproc's +1-day year rollover guard is irrelevant at this fixed date.
+				    startDate       = #date(2023, 1, 1),
+				    today           = #date(2026, 3, 24),   // Wednesday, March 24, 2026
+				    endDate         = #date(Date.Year(today), 12, 31),
+				    anchor          = #date(2023, 1, 1),    // also a Sunday — relevant to wk_index math
+				    start1900       = #date(1900, 1, 1),
+				
+				    // ── week_offset denominator ───────────────────────────────────────────────
+				    // Replicates DATEDIFF(week, @today, d) with DATEFIRST 7 (Sunday=first day).
+				    // Formula: floor((days_from_today + DOW_0based(today)) / 7)
+				    // today = Thursday → Date.DayOfWeek(today, Day.Sunday) = 4
+				    todayDOWOffset  = Date.DayOfWeek(today, Day.Sunday),
+				
+				    // ── Selling day helper ────────────────────────────────────────────────────
+				    // Cumulative weekday count from 1900-01-01 through d (inclusive).
+				    // Mirrors SQL: (DATEDIFF(day, start1900, d) + 1)
+				    //            - (DATEDIFF(week, start1900, d) * 2)
+				    //            - CASE WHEN weekday = Saturday THEN 1 ELSE 0 END
+				    //
+				    // DATEDIFF(week, '1900-01-01', d) with DATEFIRST 7:
+				    //   1900-01-01 was a Monday → 0-based DOW = 1 → boundary offset = 1
+				    //   = floor((days_from_1900 + 1) / 7)
+				    //
+				    // Saturday in M (Day.Sunday, 0-based) = 6
+				    fnSellDayNum    = (d as date) as number =>
+				        let
+				            daysFrom1900  = Duration.Days(d - start1900),
+				            weeksFrom1900 = Number.IntegerDivide(daysFrom1900 + 1, 7)
+				        in
+				            (daysFrom1900 + 1)
+				            - (weeksFrom1900 * 2)
+				            - (if Date.DayOfWeek(d, Day.Sunday) = 6 then 1 else 0),
+				
+				    todaySellDayNum = fnSellDayNum(today),
+				
+				    // ── Date list ─────────────────────────────────────────────────────────────
+				    dateCount = Duration.Days(endDate - startDate) + 1,
+				    dateList  = List.Dates(startDate, dateCount, #duration(1, 0, 0, 0)),
+				    baseTable = Table.FromList(dateList, Splitter.SplitByNothing(), {"date"}),
+				    baseTyped = Table.TransformColumnTypes(baseTable, {{"date", type date}}),
+				
+				    // ── Column additions ──────────────────────────────────────────────────────
+				
+				    // [year] — calendar year
+				    c01 = Table.AddColumn(baseTyped, "year",
+				              each Date.Year([date]), Int64.Type),
+				
+				    // [week_number] — week of year, Sunday-first (matches DATEFIRST 7)
+				    c02 = Table.AddColumn(c01, "week_number",
+				              each Date.WeekOfYear([date], Day.Sunday), Int64.Type),
+				
+				    // [day_of_week_name] — full weekday name (locale-dependent)
+				    c03 = Table.AddColumn(c02, "day_of_week_name",
+				              each Date.DayOfWeekName([date]), type text),
+				
+				    // [day_of_week_short_name] — first 3 characters of weekday name
+				    c04 = Table.AddColumn(c03, "day_of_week_short_name",
+				              each Text.Start(Date.DayOfWeekName([date]), 3), type text),
+				
+				    // [day_of_week] — Sunday=1 through Saturday=7, matching SQL DATEFIRST 7
+				    c05 = Table.AddColumn(c04, "day_of_week",
+				              each Date.DayOfWeek([date], Day.Sunday) + 1, Int64.Type),
+				
+				    // [date_index] — 1-based day offset from anchor (2023-01-01)
+				    c06 = Table.AddColumn(c05, "date_index",
+				              each Duration.Days([date] - anchor) + 1, Int64.Type),
+				
+				    // [wnumber] — zero-padded week label, e.g. "W03"
+				    c07 = Table.AddColumn(c06, "wnumber",
+				              each "W" & Text.PadStart(Text.From(Date.WeekOfYear([date], Day.Sunday)), 2, "0"),
+				              type text),
+				
+				    // [wnumber_sort] — integer sort key, e.g. 202303
+				    c08 = Table.AddColumn(c07, "wnumber_sort",
+				              each Date.Year([date]) * 100 + Date.WeekOfYear([date], Day.Sunday), Int64.Type),
+				
+				    // [week_number_year] — e.g. "W03-23"
+				    c09 = Table.AddColumn(c08, "week_number_year",
+				              each "W" & Text.PadStart(Text.From(Date.WeekOfYear([date], Day.Sunday)), 2, "0")
+				                   & "-" & Text.End(Text.From(Date.Year([date])), 2),
+				              type text),
+				
+				    // [week_ending] — Saturday of the current week
+				    // SQL: DATEADD(DAY, 6 - DATEPART(WEEKDAY, d) + 1, d) with DATEFIRST 7
+				    //      = add (7 - DOW_SQL) days = add (6 - DOW_0based) days
+				    c10 = Table.AddColumn(c09, "week_ending",
+				              each Date.AddDays([date], 6 - Date.DayOfWeek([date], Day.Sunday)), type date),
+				
+				    // [quarter] — e.g. "Q1"
+				    c11 = Table.AddColumn(c10, "quarter",
+				              each "Q" & Text.From(Date.QuarterOfYear([date])), type text),
+				
+				    // [year_quarter_sort] — e.g. 202301
+				    c12 = Table.AddColumn(c11, "year_quarter_sort",
+				              each Date.Year([date]) * 100 + Date.QuarterOfYear([date]), Int64.Type),
+				
+				    // [quarter_year] — e.g. "Q1-23"
+				    c13 = Table.AddColumn(c12, "quarter_year",
+				              each "Q" & Text.From(Date.QuarterOfYear([date]))
+				                   & "-" & Text.End(Text.From(Date.Year([date])), 2),
+				              type text),
+				
+				    // [month_num] — 1–12
+				    c14 = Table.AddColumn(c13, "month_num",
+				              each Date.Month([date]), Int64.Type),
+				
+				    // [month_name_short] — e.g. "Jan"
+				    c15 = Table.AddColumn(c14, "month_name_short",
+				              each Text.Start(Date.MonthName([date]), 3), type text),
+				
+				    // [month_name_long] — e.g. "January"
+				    c16 = Table.AddColumn(c15, "month_name_long",
+				              each Date.MonthName([date]), type text),
+				
+				    // [month_year_sort] — e.g. 202301
+				    c17 = Table.AddColumn(c16, "month_year_sort",
+				              each Date.Year([date]) * 100 + Date.Month([date]), Int64.Type),
+				
+				    // [month_year] — e.g. "Jan-23"
+				    c18 = Table.AddColumn(c17, "month_year",
+				              each Text.Start(Date.MonthName([date]), 3)
+				                   & "-" & Text.End(Text.From(Date.Year([date])), 2),
+				              type text),
+				
+				    // [month_year_long] — e.g. "Jan-2023"
+				    c19 = Table.AddColumn(c18, "month_year_long",
+				              each Text.Start(Date.MonthName([date]), 3)
+				                   & "-" & Text.From(Date.Year([date])),
+				              type text),
+				
+				    // [wk_index] — 1-based week count from anchor
+				    // SQL: DATEDIFF(week, @anchor, d) + 1 with DATEFIRST 7
+				    // anchor = 2023-01-01 (Sunday) → 0-based DOW = 0 → boundary offset = 0
+				    // = floor(days_from_anchor / 7) + 1
+				    c20 = Table.AddColumn(c19, "wk_index",
+				              each Number.IntegerDivide(Duration.Days([date] - anchor), 7) + 1, Int64.Type),
+				
+				    // [day_of_month] — 1–31
+				    c21 = Table.AddColumn(c20, "day_of_month",
+				              each Date.Day([date]), Int64.Type),
+				
+				    // [selling_day] — 1 for Mon–Fri, 0 for Sat/Sun
+				    // In M (Day.Sunday, 0-based): Sunday = 0, Saturday = 6
+				    c22 = Table.AddColumn(c21, "selling_day",
+				              each if Date.DayOfWeek([date], Day.Sunday) = 0
+				                      or Date.DayOfWeek([date], Day.Sunday) = 6
+				                   then 0 else 1,
+				              Int64.Type),
+				
+				    // [selling_day_offset] — cumulative weekday distance from today; null for weekends
+				    // Matches SQL: CASE WHEN weekday BETWEEN 2 AND 6 (Mon–Fri) THEN ... ELSE NULL
+				    // In M (0-based): Mon=1 through Fri=5
+				    c23 = Table.AddColumn(c22, "selling_day_offset",
+				              each let dow = Date.DayOfWeek([date], Day.Sunday)
+				                   in if dow >= 1 and dow <= 5
+				                      then fnSellDayNum([date]) - todaySellDayNum
+				                      else null,
+				              Int64.Type),
+				
+				    // [week_offset] — signed week count from today's week
+				    // SQL: DATEDIFF(week, @today, d) with DATEFIRST 7
+				    // = floor((days_from_today + DOW_0based(today)) / 7)
+				    // Uses RoundDown (not IntegerDivide) to correctly floor negative values
+				    c24 = Table.AddColumn(c23, "week_offset",
+				              each Number.RoundDown((Duration.Days([date] - today) + todayDOWOffset) / 7),
+				              Int64.Type),
+				
+				    // [month_offset] — signed month count from today's month
+				    c25 = Table.AddColumn(c24, "month_offset",
+				              each (Date.Year([date]) - Date.Year(today)) * 12
+				                   + (Date.Month([date]) - Date.Month(today)),
+				              Int64.Type),
+				
+				    // [quarter_offset] — signed quarter count from today's quarter
+				    c26 = Table.AddColumn(c25, "quarter_offset",
+				              each (Date.Year([date]) - Date.Year(today)) * 4
+				                   + (Date.QuarterOfYear([date]) - Date.QuarterOfYear(today)),
+				              Int64.Type),
+				
+				    // [trimester_offset] — signed trimester count from today's trimester
+				    // SQL: (YEAR(d) - YEAR(@today)) * 3 + CEILING(MONTH(d)/4.0) - CEILING(MONTH(@today)/4.0)
+				    // Trimesters: Jan–Apr = 1, May–Aug = 2, Sep–Dec = 3
+				    // CEILING(month/4.0) in M = Number.RoundUp(month/4)
+				    // Note: Number.RoundUp of an exact integer (e.g. 8/4=2.0) correctly returns 2
+				    c27 = Table.AddColumn(c26, "trimester_offset",
+				              each (Date.Year([date]) - Date.Year(today)) * 3
+				                   + Number.RoundUp(Date.Month([date]) / 4)
+				                   - Number.RoundUp(Date.Month(today)  / 4),
+				              Int64.Type),
+				
+				    // [year_offset] — signed year count from today's year
+				    c28 = Table.AddColumn(c27, "year_offset",
+				              each Date.Year([date]) - Date.Year(today), Int64.Type)
+				
+				in
+				    c28
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

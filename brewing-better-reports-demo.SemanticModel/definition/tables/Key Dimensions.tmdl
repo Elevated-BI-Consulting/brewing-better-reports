@@ -1,0 +1,50 @@
+table 'Key Dimensions'
+	lineageTag: 9092ff2e-2865-4ea6-8c93-4e7a52fac16b
+
+	column 'Key Dimensions'
+		lineageTag: 7757b6ce-b93b-4ca9-b80f-5e86858c7fd9
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Key Dimensions Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Key Dimensions Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Dimensions Fields'
+		isHidden
+		lineageTag: 1bbfe587-ef05-4eab-a5b4-eba58ff90393
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Key Dimensions Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Dimensions Order'
+		isHidden
+		formatString: 0
+		lineageTag: 78e0167b-e944-4da9-b471-797c6288abf9
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Key Dimensions' = calculated
+		mode: import
+		source =
+				{
+				    ("Company", NAMEOF('Account'[Company]), 0),
+				    ("Supplier", NAMEOF('Item'[Supplier]), 1),
+				    ("Brand", NAMEOF('Item'[Brand]), 2),
+				    ("ProductName", NAMEOF('Item'[ProductName]), 3)
+				}
+
+	annotation PBI_Id = 0c06c24e6a624c21a2030cc2073875cc
+

@@ -1,0 +1,50 @@
+table 'Key Measures'
+	lineageTag: de1f5a95-1775-4ef5-a124-2794308bc434
+
+	column 'Key Measures'
+		lineageTag: 740b0127-c6ad-4a0d-92b9-6ab6b1d471fd
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Key Measures Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Key Measures Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Measures Fields'
+		isHidden
+		lineageTag: a4ab5849-bb87-41d7-a0be-2113517b232e
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Key Measures Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Measures Order'
+		isHidden
+		formatString: 0
+		lineageTag: 1cba1e6a-1a8d-46f0-a7fb-f6fac847eeb3
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Key Measures' = calculated
+		mode: import
+		source =
+				{
+				    ("Revenue", NAMEOF('Invoice'[Revenue]), 0),
+				    ("Revenue PY", NAMEOF('Invoice'[Revenue PY]), 1),
+				    ("Units Sold", NAMEOF('Invoice'[Units Sold]), 2),
+				    ("Units Sold PY", NAMEOF('Invoice'[Units Sold PY]), 3)
+				}
+
+	annotation PBI_Id = 87979ac73c0f423ba46235757a9d9e7f
+

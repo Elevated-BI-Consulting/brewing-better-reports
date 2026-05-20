@@ -1,0 +1,51 @@
+table 'Key Date Dimensions'
+	lineageTag: d51c79f5-5028-4374-82b0-18f3c09b4acf
+
+	column 'Key Date Dimensions'
+		lineageTag: 33fdebfd-25a8-46d7-9ab9-42e4a4d0c06c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Key Date Dimensions Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Key Date Dimensions Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Date Dimensions Fields'
+		isHidden
+		lineageTag: f09d84b9-5d64-4b01-b575-45030cc9c180
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Key Date Dimensions Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Date Dimensions Order'
+		isHidden
+		formatString: 0
+		lineageTag: 08bd78ce-a0f0-44b6-8e34-0b05707589c9
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Key Date Dimensions' = calculated
+		mode: import
+		source =
+				{
+				    ("year", NAMEOF('Date'[year]), 0),
+				    ("quarter_year", NAMEOF('Date'[quarter_year]), 1),
+				    ("month_year", NAMEOF('Date'[month_year]), 2),
+				    ("week_ending", NAMEOF('Date'[week_ending]), 3),
+				    ("date", NAMEOF('Date'[date]), 4)
+				}
+
+	annotation PBI_Id = 1feda0a8296c4f578c6cc2fd8f980388
+

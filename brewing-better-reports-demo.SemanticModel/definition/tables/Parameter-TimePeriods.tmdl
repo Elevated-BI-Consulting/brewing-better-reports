@@ -1,0 +1,56 @@
+table Parameter-TimePeriods
+	isHidden
+	lineageTag: 742dc17b-0f73-4fa4-a9aa-259a5e4218d0
+
+	column 'Time Period Parameters'
+		isHidden
+		lineageTag: fdde92a8-dcd3-4fb0-a222-eed63f777efa
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Time Period Parameters Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Time Period Parameters Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Period Parameters Fields'
+		isHidden
+		lineageTag: 5c4f17e9-cbe7-4358-bf0e-a43de758b66f
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Time Period Parameters Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Period Parameters Order'
+		isHidden
+		formatString: 0
+		lineageTag: 7b969dc3-4a1d-4dd1-bb9f-584bdfb0fd59
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter-TimePeriods = calculated
+		mode: import
+		source =
+				{
+				    ("Year", NAMEOF('Date'[Year]), 0),
+				    ("Quarter Year", NAMEOF('Date'[quarter_year]), 1),
+				    ("Month Year", NAMEOF('Date'[month_year]), 2),
+				    ("Week Ending", NAMEOF('Date'[week_ending]), 3),
+				    ("Date", NAMEOF('Date'[Date]), 4),
+				    ("Quarter", NAMEOF('Date'[Quarter]), 5),
+				    ("Month", NAMEOF('Date'[month_name_short]), 6),
+				    ("Week Number", NAMEOF('Date'[week_number]), 7)
+				}
+
+	annotation PBI_Id = 61ebaab843c042f4a9373320b4fbebaa
+

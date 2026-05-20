@@ -1,0 +1,22 @@
+relationship 5e222cf8-b222-ff5b-ce60-45e6155d972f
+	fromColumn: Invoice.'Invoice Date'
+	toColumn: Date.date
+
+relationship 68d7d5d9-bf36-69f2-7138-a6f463a1bd0d
+	fromColumn: Invoice.ProductID
+	toColumn: Item.ProductID
+
+relationship c0a46ac9-bfdf-fb0e-42ac-7a5060562f94
+	fromColumn: Invoice.CustomerID
+	toColumn: Account.CustomerID
+
+relationship 949a2fb4-d4e9-4a7a-986d-0f838abbcd1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.date
+	toColumn: LocalDateTable_9410d9cc-0d43-46c6-83c5-013d5f5e3419.Date
+
+relationship 54eec9e7-ff78-4a69-af26-3dfab3fc6afd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.week_ending
+	toColumn: LocalDateTable_c6f91ebc-1d2b-45b2-99ba-fd9488161b9d.Date
+

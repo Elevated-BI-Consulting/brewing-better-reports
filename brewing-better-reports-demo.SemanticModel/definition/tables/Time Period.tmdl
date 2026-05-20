@@ -1,0 +1,604 @@
+table 'Time Period'
+	lineageTag: 046259f3-1328-4c62-bc95-7ac91c1e56fd
+
+	calculationGroup
+
+		calculationItem WTD =
+				
+				VAR _maxdate =
+				    MIN (
+				        MAX ( 'Date'[date] ),
+				        DATE ( 2026, 03, 25 ) -- TODAY()
+				    )
+				VAR _mindate =
+				    MIN ( 'Date'[date] )
+				VAR _currentyear =
+				    LOOKUPVALUE (
+				        'Date'[year],
+				        'Date'[date], _maxdate
+				    )
+				VAR _weeknumber =
+				    LOOKUPVALUE (
+				        'Date'[wnumber],
+				        'Date'[date], _maxdate
+				    )
+				VAR _datetbl =
+				    FILTER (
+				        ALL ( 'Date' ),
+				        'Date'[year] = _currentyear
+				            && 'Date'[wnumber] = _weeknumber
+				            && 'Date'[date] <= _maxdate
+				)
+				
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    _datetbl
+				)
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'WTD PY' = ```
+				
+				VAR _maxdate = 
+				MIN (
+				   MAX ( 'Date'[Date] )
+				   , DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _mindate = MIN ( 'Date'[Date] )
+				VAR _currentyear = 
+				LOOKUPVALUE ( 
+				    'Date'[Year],
+				    'Date'[Date], _maxdate
+				)
+				VAR _weeknumber = 
+				LOOKUPVALUE ( 
+				    'Date'[wnumber],
+				    'Date'[Date], _maxdate
+				)
+				VAR _maxdaynumber = 
+				LOOKUPVALUE ( 
+				    'Date'[day_of_week],
+				    'Date'[Date], _maxdate
+				)
+				VAR _datetbl =
+				FILTER(
+				    ALL ( 'Date' ), 
+				    'Date'[Year] = _currentyear - 1
+				        && 'Date'[wnumber] = _weeknumber
+				        && 'Date'[day_of_week] <= _maxdaynumber
+				)
+				
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    _datetbl
+				)
+				```
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'WTD PY Var' = ```
+				-- WTD 
+				
+				VAR _maxdate = 
+				MIN (
+				   MAX ( 'Date'[Date] )
+				   ,DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _maxweek = 
+				LOOKUPVALUE ( 
+				    'Date'[wk_index],
+				    'Date'[Date], _maxdate
+				)
+				VAR _datetbl =
+				FILTER(
+				    ALL ( 'Date' ), 
+				    'Date'[wk_index] = _maxweek
+				        && 'Date'[Date] <= _maxdate
+				)
+				VAR _WTDresult = 
+				CALCULATE (
+				    SELECTEDMEASURE()
+				    , _datetbl
+				)
+				
+				
+				-- WTD PY
+				VAR _weeknumber = 
+				LOOKUPVALUE ( 
+				    'Date'[wnumber],
+				    'Date'[Date], _maxdate
+				)
+				VAR _maxdaynumber = 
+				LOOKUPVALUE ( 
+				    'Date'[day_of_week],
+				    'Date'[Date], _maxdate
+				)
+				VAR _PYdatetbl =
+				FILTER(
+				    ALL ( 'Date' ), 
+				    'Date'[Year] = YEAR ( _maxdate ) - 1
+				        && 'Date'[wnumber] = _weeknumber
+				        && 'Date'[day_of_week] <= _maxdaynumber
+				)
+				VAR _PYresult = 
+				CALCULATE (
+				    SELECTEDMEASURE() 
+				    , _PYdatetbl
+				)
+				
+				RETURN
+				_WTDresult - _PYresult
+				```
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'WTD PY %Δ' = ```
+				-- WTD 
+				
+				VAR _maxdate = 
+				MIN (
+				   MAX ( 'Date'[Date] )
+				    , DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _maxweek = 
+				LOOKUPVALUE ( 
+				    'Date'[Wk_Index],
+				    'Date'[Date], _maxdate
+				)
+				VAR _datetbl =
+				FILTER(
+				    ALL ( 'Date' ), 
+				    'Date'[Wk_Index] = _maxweek
+				        && 'Date'[Date] <= _maxdate
+				)
+				VAR _WTDresult = 
+				CALCULATE(
+				    SELECTEDMEASURE()
+				    , _datetbl
+				)
+				
+				-- WTD PY
+				VAR _weeknumber = 
+				LOOKUPVALUE ( 
+				    'Date'[wnumber],
+				    'Date'[Date], _maxdate
+				)
+				VAR _maxdaynumber = 
+				LOOKUPVALUE ( 
+				    'Date'[day_of_week],
+				    'Date'[Date], _maxdate
+				)
+				VAR _PYdatetbl =
+				FILTER(
+				    ALL ( 'Date' ), 
+				    'Date'[Year] = YEAR ( _maxdate ) - 1
+				        && 'Date'[wnumber] = _weeknumber
+				        && 'Date'[day_of_week] <= _maxdaynumber
+				)
+				VAR _PYresult = 
+				CALCULATE (
+				    SELECTEDMEASURE()
+				    , _PYdatetbl
+				)
+				
+				VAR _variance = _WTDresult - _PYresult
+				
+				RETURN
+				DIVIDE ( _variance, _PYresult, 0 )
+				```
+
+			formatStringDefinition = "#,##0.0%;(#,##0.0%)"
+
+		calculationItem MTD =
+				VAR _maxdate =
+				    MIN (
+				        -- sets max date for calculation so that TODAY() will be used
+				        MAX ( 'Date'[Date] ) -- in the event that [Date] is not applied as a filter on the visual
+				        , DATE ( 2026, 03, 25 ) -- TODAY()
+				
+				    )
+				VAR _mindate =
+				    DATE ( YEAR ( _maxdate ), MONTH ( _maxdate ), 1 )
+				VAR _datetbl =
+				    FILTER (
+				        ALL ( 'Date' ),
+				        'Date'[Date] >= _mindate
+				            && 'Date'[Date] <= _maxdate
+				    )
+				
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    _datetbl
+				)
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'MTD PY' = ```
+				VAR _maxdate =
+				MIN (                           -- sets max date for calculation so that TODAY() will be used
+				    MAX ( 'Date'[Date] )    -- in the event that [Date] is not applied as a filter on the visual
+				    , DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _PYmaxdate = DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ) , DAY ( _maxdate ) )
+				VAR _PYmindate = DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate), 1 )
+				VAR _datetbl = 
+				FILTER ( 
+				    ALL ( 'Date' )
+				    , 'Date'[Date] >= _PYmindate
+				        && 'Date'[Date] <= _PYmaxdate
+				)
+				
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE()
+				    , _datetbl
+				)
+				```
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'MTD PY Var' =
+				-- MTD
+				VAR _maxdate =
+				MIN (
+				    -- sets max date for calculation so that TODAY() will be used
+				    MAX ( 'Date'[Date] ) -- in the event that [Date] is not applied as a filter on the visual
+				    ,DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _mindate =
+				DATE ( YEAR ( _maxdate ), MONTH ( _maxdate ), 1 )
+				VAR _datetbl =
+				FILTER (
+				    ALL ( 'Date' ),
+				    'Date'[Date] >= _mindate
+				        && 'Date'[Date] <= _maxdate
+				)
+				VAR _MTDresult =
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    _datetbl
+				) -- MTD PY
+				VAR _PYmaxdate =
+				DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ), DAY ( _maxdate ) )
+				VAR _PYmindate =
+				DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ), 1 )
+				VAR _PYdatetbl =
+				FILTER (
+				    ALL ( 'Date' ),
+				    'Date'[Date] >= _PYmindate
+				        && 'Date'[Date] <= _PYmaxdate
+				)
+				VAR _PYresult =
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    _PYdatetbl
+				)
+				RETURN
+				_MTDresult - _PYresult
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'MTD PY %Δ' = ```
+				-- MTD
+				VAR _maxdate =
+				MIN (
+				    -- sets max date for calculation so that TODAY() will be used
+				    MAX ( 'Date'[Date] ) -- in the event that [Date] is not applied as a filter on the visual
+				    ,DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _mindate =
+				DATE ( YEAR ( _maxdate ), MONTH ( _maxdate ), 1 )
+				VAR _datetbl =
+				FILTER (
+				    ALL ( 'Date' ),
+				    'Date'[Date] >= _mindate
+				        && 'Date'[Date] <= _maxdate
+				)
+				VAR _MTDresult =
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    _datetbl
+				) 
+				
+				-- MTD PY
+				VAR _PYmaxdate =
+				DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ), DAY ( _maxdate ) )
+				VAR _PYmindate =
+				DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ), 1 )
+				VAR _PYdatetbl =
+				FILTER (
+				    ALL ( 'Date' ),
+				    'Date'[Date] >= _PYmindate
+				        && 'Date'[Date] <= _PYmaxdate
+				)
+				VAR _PYresult =
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    _PYdatetbl
+				)
+				VAR _variance = _MTDresult - _PYresult
+				
+				RETURN
+				DIVIDE (
+				    _variance,
+				    _PYresult,
+				    0
+				)
+				```
+
+			formatStringDefinition = "#,##0.0%;(#,##0.0%)"
+
+		calculationItem YTD = ```
+				VAR _maxdate =
+				MIN (                          
+				    MAX ( 'Date'[date] ),    
+				    DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _mindate = DATE ( YEAR ( _maxdate ), 1, 1 )
+				VAR _datetbl = 
+				FILTER ( 
+				    ALL ( 'Date' ),
+				    'Date'[Date] >= _mindate
+				        && 'Date'[Date] <= _maxdate
+				)
+				VAR _result = 
+				SUMX ( 
+				    _datetbl,
+				    SELECTEDMEASURE()
+				)
+				
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE()
+				    , _datetbl
+				  )
+				```
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'YTD PY' = ```
+				VAR _maxdate =
+				MIN (                          
+				    MAX ( 'Date'[date] ),    
+				    DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _PYmaxdate = DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ), DAY ( _maxdate ) )
+				VAR _PYmindate = DATE ( YEAR ( _maxdate ) - 1, 1, 1 )
+				VAR _datetbl = 
+				FILTER ( 
+				    ALL ( 'Date' )
+				    , 'Date'[Date] >= _PYmindate
+				        && 'Date'[Date] <= _PYmaxdate
+				)
+				VAR _result = 
+				SUMX ( 
+				    _datetbl
+				    , SELECTEDMEASURE()
+				)
+				
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE()
+				    , _datetbl
+				  )
+				```
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'YTD PY Var' = ```
+				-- YTD
+				VAR _maxdate =
+				MIN (                          
+				    MAX ( 'Date'[date] ),    
+				    DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _mindate = DATE ( YEAR ( _maxdate ), 1, 1 )
+				VAR _dates = 
+				FILTER ( 
+				    ALL ( 'Date' ),
+				    'Date'[Date] >= _mindate
+				        && 'Date'[Date] <= _maxdate
+				)
+				
+				VAR _ytdresult = 
+				CALCULATE(
+				    SELECTEDMEASURE()
+				    , _dates
+				)
+				
+				
+				-- YTD PY
+				
+				VAR _PYmaxdate = DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ), DAY ( _maxdate ) )
+				VAR _PYmindate = DATE ( YEAR ( _maxdate ) - 1, 1, 1 )
+				VAR _datetbl = 
+				FILTER ( 
+				    ALL ( 'Date' )
+				    , 'Date'[Date] >= _PYmindate
+				        && 'Date'[Date] <= _PYmaxdate
+				)
+				VAR _ytdpyresult = 
+				CALCULATE(
+				    SELECTEDMEASURE()
+				    , _datetbl
+				)
+				
+				
+				
+				RETURN
+				_ytdresult - _ytdpyresult
+				```
+
+			formatStringDefinition =
+					SWITCH (
+					    TRUE(),
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit per case" ), "$#,##0.00",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "%" ), "#,##0.0%;(#,##0.0%)",
+					    CONTAINSSTRING ( SELECTEDMEASURENAME(), "profit" )
+					        || CONTAINSSTRING ( SELECTEDMEASURENAME(), "gross" ), "$#,##0",
+					    "#,###"
+					)
+
+		calculationItem 'YTD PY %Δ' = ```
+				-- YTD
+				VAR _maxdate =
+				MIN (                          
+				    MAX ( 'Date'[date] ),    
+				    DATE ( 2026, 03, 25 ) -- TODAY()
+				)
+				VAR _mindate = DATE ( YEAR ( _maxdate ), 1, 1 )
+				VAR _dates = 
+				FILTER ( 
+				    ALL ( 'Date' ),
+				    'Date'[Date] >= _mindate
+				        && 'Date'[Date] <= _maxdate
+				)
+				
+				VAR _ytdresult = 
+				CALCULATE (
+				    SELECTEDMEASURE()
+				    , _dates
+				)
+				
+				
+				-- YTD PY
+				
+				VAR _PYmaxdate = DATE ( YEAR ( _maxdate ) - 1, MONTH ( _maxdate ), DAY ( _maxdate ) )
+				VAR _PYmindate = DATE ( YEAR ( _maxdate ) - 1, 1, 1 )
+				VAR _datetbl = 
+				FILTER ( 
+				    ALL ( 'Date' )
+				    , 'Date'[Date] >= _PYmindate
+				        && 'Date'[Date] <= _PYmaxdate
+				)
+				VAR _ytdpyresult = 
+				CALCULATE (
+				        SELECTEDMEASURE()
+				        , _datetbl
+				    )
+				
+				-- YTD VAR
+				VAR _ytdvariance = _ytdresult - _ytdpyresult
+				
+				RETURN
+				DIVIDE ( _ytdvariance, _ytdpyresult, 0 )
+				```
+
+			formatStringDefinition = "#,##0.0%;(#,##0.0%)"
+
+	column Name
+		dataType: string
+		lineageTag: f22b3c86-d14e-4436-984e-1f9899c0a4a6
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: 445ae466-4f4b-4c77-9e33-818997f83600
+		sourceColumn: Ordinal
+
+	column 'Time Period Group' =
+			
+			SWITCH (
+			    TRUE()
+			    , CONTAINSSTRING ( [Name], "WTD" )
+			        , "WTD"
+			    , CONTAINSSTRING ( [Name], "MTD" )
+			        , "MTD"
+			    , CONTAINSSTRING ( [Name], "YTD" )
+			        , "YTD"
+			)
+		lineageTag: 30adcd4c-6a74-4883-ad2a-a268c2c027ca
+		summarizeBy: none
+		sortByColumn: TimePeriodGroupSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column TimePeriodGroupSort = ```
+			
+			SWITCH ( 
+			    TRUE()
+			    , CONTAINSSTRING ( [Name], "WTD" )
+			        , 1
+			    , CONTAINSSTRING ( [Name], "MTD" )
+			        , 2
+			    , CONTAINSSTRING ( [Name], "TTD" )
+			        , 3
+			    , CONTAINSSTRING ( [Name], "YTD" )
+			        , 4
+			)
+			```
+		formatString: 0
+		lineageTag: b861dfa2-2349-48bb-89ae-13218aef59c7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+

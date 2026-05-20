@@ -1,0 +1,32 @@
+model brewing-better-reports-demo
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_ProTooling = ["MCP-PBIModeling","DevMode"]
+
+annotation PBI_QueryOrder = ["Invoice","Item","Account","Date"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation __TEdtr = 1
+
+ref table Invoice
+ref table Item
+ref table Account
+ref table Date
+ref table 'Time Period'
+ref table Parameter-TimePeriods
+ref table 'Key Dimensions'
+ref table DateTableTemplate_2b8b6b6f-f2de-4805-94e8-98e81c7e6d6c
+ref table LocalDateTable_9410d9cc-0d43-46c6-83c5-013d5f5e3419
+ref table LocalDateTable_c6f91ebc-1d2b-45b2-99ba-fd9488161b9d
+ref table 'Key Date Dimensions'
+ref table 'Key Measures'
+
+ref cultureInfo en-US
+

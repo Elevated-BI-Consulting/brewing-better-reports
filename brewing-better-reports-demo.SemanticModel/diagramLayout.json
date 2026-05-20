@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 176,
+            "y": 8
+          },
+          "nodeIndex": "Account",
+          "nodeLineageTag": "ded9860c-d6db-4ccc-b4bf-ccdaac5da3df",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 360,
+            "y": 415
+          },
+          "nodeIndex": "Invoice",
+          "nodeLineageTag": "8f8e7454-e080-4b7d-992c-c1a39e164594",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 475,
+            "y": 11
+          },
+          "nodeIndex": "Item",
+          "nodeLineageTag": "3c34bbea-52dd-4abe-afaa-946e8a5f52cc",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 792,
+            "y": 5
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "b800d85d-57b1-4d00-85c4-cd9dcf04be38",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

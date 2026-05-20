@@ -1,0 +1,28 @@
+table Account
+	lineageTag: ded9860c-d6db-4ccc-b4bf-ccdaac5da3df
+
+	column CustomerID
+		dataType: int64
+		lineageTag: b4ca6563-7204-4818-b7cb-045a4433742c
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+	column Company
+		dataType: string
+		lineageTag: 94f4ae86-8f5f-4987-96fd-e87a0f10c56b
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Account = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Customers.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Selected Columns" = Table.SelectColumns(#"Promoted Headers", {"CustomerID", "Company"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Selected Columns", {{"CustomerID", Int64.Type}, {"Company", type text}})
+				in
+				    #"Changed Type"
+

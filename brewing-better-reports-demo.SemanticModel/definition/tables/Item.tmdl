@@ -1,0 +1,52 @@
+table Item
+	lineageTag: 3c34bbea-52dd-4abe-afaa-946e8a5f52cc
+
+	column ProductID
+		dataType: int64
+		lineageTag: 69495452-cdfa-4aed-bedb-27285031ded5
+		summarizeBy: none
+		sourceColumn: ProductID
+
+	column ProductName
+		dataType: string
+		lineageTag: b088d19b-6cba-43c7-8907-43caaf833036
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: 97a3de4c-998a-4e9f-b420-e37330064d7d
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supplier
+		dataType: string
+		lineageTag: dc57b7df-ed5f-4304-ba17-5c05c6eb9643
+		summarizeBy: none
+		sourceColumn: Supplier
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Item = m
+		mode: import
+		source =
+				let
+				    Products = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Products.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
+				    Brands = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Brands.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
+				    BrandFamilies = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\BrandFamilies.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
+				    Suppliers = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Suppliers.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
+				    JoinBrands = Table.NestedJoin(Products, {"BrandID"}, Brands, {"BrandID"}, "BrandsExpanded", JoinKind.LeftOuter),
+				    ExpandBrands = Table.ExpandTableColumn(JoinBrands, "BrandsExpanded", {"Brand", "BrandFamilyID"}),
+				    JoinBrandFamilies = Table.NestedJoin(ExpandBrands, {"BrandFamilyID"}, BrandFamilies, {"BrandFamilyID"}, "BrandFamiliesExpanded", JoinKind.LeftOuter),
+				    ExpandBrandFamilies = Table.ExpandTableColumn(JoinBrandFamilies, "BrandFamiliesExpanded", {"SupplierID"}),
+				    JoinSuppliers = Table.NestedJoin(ExpandBrandFamilies, {"SupplierID"}, Suppliers, {"SupplierID"}, "SuppliersExpanded", JoinKind.LeftOuter),
+				    ExpandSuppliers = Table.ExpandTableColumn(JoinSuppliers, "SuppliersExpanded", {"Supplier"}),
+				    #"Selected Columns" = Table.SelectColumns(ExpandSuppliers, {"ProductID", "ProductName", "Brand", "Supplier"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Selected Columns", {{"ProductID", Int64.Type}, {"ProductName", type text}, {"Brand", type text}, {"Supplier", type text}})
+				in
+				    #"Changed Type"
+
