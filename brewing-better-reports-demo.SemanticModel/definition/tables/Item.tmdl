@@ -35,18 +35,9 @@ table Item
 		mode: import
 		source =
 				let
-				    Products = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Products.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
-				    Brands = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Brands.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
-				    BrandFamilies = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\BrandFamilies.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
-				    Suppliers = Table.PromoteHeaders(Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Suppliers.csv"),[Delimiter=",", Encoding=65001]),[PromoteAllScalars=true]),
-				    JoinBrands = Table.NestedJoin(Products, {"BrandID"}, Brands, {"BrandID"}, "BrandsExpanded", JoinKind.LeftOuter),
-				    ExpandBrands = Table.ExpandTableColumn(JoinBrands, "BrandsExpanded", {"Brand", "BrandFamilyID"}),
-				    JoinBrandFamilies = Table.NestedJoin(ExpandBrands, {"BrandFamilyID"}, BrandFamilies, {"BrandFamilyID"}, "BrandFamiliesExpanded", JoinKind.LeftOuter),
-				    ExpandBrandFamilies = Table.ExpandTableColumn(JoinBrandFamilies, "BrandFamiliesExpanded", {"SupplierID"}),
-				    JoinSuppliers = Table.NestedJoin(ExpandBrandFamilies, {"SupplierID"}, Suppliers, {"SupplierID"}, "SuppliersExpanded", JoinKind.LeftOuter),
-				    ExpandSuppliers = Table.ExpandTableColumn(JoinSuppliers, "SuppliersExpanded", {"Supplier"}),
-				    #"Selected Columns" = Table.SelectColumns(ExpandSuppliers, {"ProductID", "ProductName", "Brand", "Supplier"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Selected Columns", {{"ProductID", Int64.Type}, {"ProductName", type text}, {"Brand", type text}, {"Supplier", type text}})
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Elevated-BI-Consulting/brewing-better-reports/main/data/Item.csv"), [Delimiter = ",", Columns = 4, QuoteStyle = QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"ProductID", Int64.Type}, {"ProductName", type text}, {"Brand", type text}, {"Supplier", type text}})
 				in
 				    #"Changed Type"
 
