@@ -19,10 +19,9 @@ table Account
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\Customers.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Selected Columns" = Table.SelectColumns(#"Promoted Headers", {"CustomerID", "Company"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Selected Columns", {{"CustomerID", Int64.Type}, {"Company", type text}})
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Elevated-BI-Consulting/brewing-better-reports/main/data/Account.csv"), [Delimiter = ",", Columns = 2, QuoteStyle = QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"CustomerID", Int64.Type}, {"Company", type text}})
 				in
 				    #"Changed Type"
 

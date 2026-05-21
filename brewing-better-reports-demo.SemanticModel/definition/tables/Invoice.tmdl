@@ -301,14 +301,11 @@ table Invoice
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\austi\OneDrive - elevatedbi.com\Elevated BI\Power BI\BevBridge\dummy Encompass data\InvoiceTrans.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"Discount", "Discount2", "Participation", "Participation2", "Deposit", "LaidInCost", "TaxCost", "TaxCost2", "WholesaleUnitsPerCase", "LoadSheetLocationID"}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"InvoiceID", "Invoice Code"}, {"LoadSheetDate", "Invoice Date"}, {"NumUnits", "Units"}, {"FullPrice", "MSRP"}}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"InvoiceTransID", Int64.Type}, {"Invoice Code", Int64.Type}, {"Invoice Date", type date}, {"CustomerID", Int64.Type}, {"ProductID", Int64.Type}, {"Units", Int64.Type}, {"MSRP", type number}, {"UnitPrice", type number}, {"ExtPrice", type number}}),
-				    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"Invoice Date", Order.Descending}})
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Elevated-BI-Consulting/brewing-better-reports/main/data/Invoice.csv"), [Delimiter = ",", Columns = 9, QuoteStyle = QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"InvoiceTransID", Int64.Type}, {"Invoice Code", Int64.Type}, {"Invoice Date", type date}, {"CustomerID", Int64.Type}, {"ProductID", Int64.Type}, {"Units", Int64.Type}, {"MSRP", type number}, {"UnitPrice", type number}, {"ExtPrice", type number}})
 				in
-				    #"Sorted Rows"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 
