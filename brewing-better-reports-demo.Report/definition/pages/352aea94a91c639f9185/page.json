@@ -20,47 +20,20 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "t",
-              "Entity": "Time Period",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "t"
-                          }
-                        },
-                        "Property": "Time Period Group"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'WTD'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "360bcd1ab8fd3f4507ba",
+      "target": "612c58369afcb797be73",
+      "type": "NoFilter"
+    },
+    {
+      "source": "360bcd1ab8fd3f4507ba",
+      "target": "cefbbee446d1084483c4",
+      "type": "DataFilter"
+    }
+  ]
 }

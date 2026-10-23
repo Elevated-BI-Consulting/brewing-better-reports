@@ -13,7 +13,6 @@ table 'Key Date Dimensions'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Key Date Dimensions Fields'
-		isHidden
 		lineageTag: f09d84b9-5d64-4b01-b575-45030cc9c180
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Key Date Dimensions'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Key Date Dimensions Order'
-		isHidden
 		formatString: 0
 		lineageTag: 08bd78ce-a0f0-44b6-8e34-0b05707589c9
 		summarizeBy: sum

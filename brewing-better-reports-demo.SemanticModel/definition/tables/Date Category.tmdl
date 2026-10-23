@@ -2,7 +2,6 @@ table 'Date Category'
 	lineageTag: 6975fe86-362f-49b2-8688-62835c93fbaf
 
 	column Date
-		isHidden
 		formatString: Short Date
 		lineageTag: b7b690fd-2a97-4658-bca7-cded64fcb438
 		summarizeBy: none

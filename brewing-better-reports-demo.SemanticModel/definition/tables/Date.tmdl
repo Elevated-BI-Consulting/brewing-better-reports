@@ -8,10 +8,7 @@ table Date
 		summarizeBy: none
 		sourceColumn: date
 
-		variation Variation
-			isDefault
-			relationship: 949a2fb4-d4e9-4a7a-986d-0f838abbcd1d
-			defaultHierarchy: LocalDateTable_9410d9cc-0d43-46c6-83c5-013d5f5e3419.'Date Hierarchy'
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -24,6 +21,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: year
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column week_number
@@ -33,6 +32,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: week_number
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column day_of_week_name
@@ -41,6 +42,8 @@ table Date
 		summarizeBy: none
 		sourceColumn: day_of_week_name
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column day_of_week_short_name
@@ -48,6 +51,8 @@ table Date
 		lineageTag: e33723db-f100-4ef9-8419-3a2a23f120d4
 		summarizeBy: none
 		sourceColumn: day_of_week_short_name
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -58,6 +63,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: day_of_week
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column date_index
@@ -67,6 +74,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: date_index
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column wnumber
@@ -74,6 +83,8 @@ table Date
 		lineageTag: 6811fd01-0cab-4af9-9ead-bc75f1e7349a
 		summarizeBy: none
 		sourceColumn: wnumber
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -84,6 +95,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: wnumber_sort
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column week_number_year
@@ -91,6 +104,8 @@ table Date
 		lineageTag: 749d4e25-4458-4cc5-b2b3-c43158c8cda1
 		summarizeBy: none
 		sourceColumn: week_number_year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -101,10 +116,7 @@ table Date
 		summarizeBy: none
 		sourceColumn: week_ending
 
-		variation Variation
-			isDefault
-			relationship: 54eec9e7-ff78-4a69-af26-3dfab3fc6afd
-			defaultHierarchy: LocalDateTable_c6f91ebc-1d2b-45b2-99ba-fd9488161b9d.'Date Hierarchy'
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -116,6 +128,8 @@ table Date
 		summarizeBy: none
 		sourceColumn: quarter
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column year_quarter_sort
@@ -125,6 +139,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: year_quarter_sort
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column quarter_year
@@ -132,6 +148,8 @@ table Date
 		lineageTag: 7e62dff6-86f8-4d9d-91f3-91db4907ed15
 		summarizeBy: none
 		sourceColumn: quarter_year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -142,6 +160,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: month_num
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column month_name_short
@@ -149,6 +169,8 @@ table Date
 		lineageTag: 22d17427-24a8-4fdc-95f3-67580fedd208
 		summarizeBy: none
 		sourceColumn: month_name_short
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -158,6 +180,8 @@ table Date
 		summarizeBy: none
 		sourceColumn: month_name_long
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column month_year_sort
@@ -166,6 +190,8 @@ table Date
 		lineageTag: 62382d8c-9263-43a8-8ffc-e4d4a5f0a069
 		summarizeBy: sum
 		sourceColumn: month_year_sort
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -178,6 +204,8 @@ table Date
 
 		changedProperty = SortByColumn
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column month_year_long
@@ -185,6 +213,8 @@ table Date
 		lineageTag: 5f233bdd-ded9-4e35-b5aa-edfd28afe77a
 		summarizeBy: none
 		sourceColumn: month_year_long
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -195,6 +225,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: wk_index
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column day_of_month
@@ -203,6 +235,8 @@ table Date
 		lineageTag: 6695d315-74ab-49b4-ad63-ba3922b2283d
 		summarizeBy: sum
 		sourceColumn: day_of_month
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -213,6 +247,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: selling_day
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column selling_day_offset
@@ -221,6 +257,8 @@ table Date
 		lineageTag: acdd0659-6547-4c57-b10c-b57c5e765ccc
 		summarizeBy: sum
 		sourceColumn: selling_day_offset
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -231,6 +269,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: week_offset
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column month_offset
@@ -239,6 +279,8 @@ table Date
 		lineageTag: 6274380a-c86a-4c89-8aa5-b2d7ef8d276e
 		summarizeBy: sum
 		sourceColumn: month_offset
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -249,6 +291,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: quarter_offset
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column trimester_offset
@@ -258,6 +302,8 @@ table Date
 		summarizeBy: sum
 		sourceColumn: trimester_offset
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column year_offset
@@ -266,6 +312,8 @@ table Date
 		lineageTag: 0fce59d7-2d93-4e6d-8d8d-28ece2e5814c
 		summarizeBy: sum
 		sourceColumn: year_offset
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

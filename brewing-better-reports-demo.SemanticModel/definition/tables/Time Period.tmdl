@@ -572,7 +572,6 @@ table 'Time Period'
 
 	column Ordinal
 		dataType: int64
-		isHidden
 		lineageTag: 445ae466-4f4b-4c77-9e33-818997f83600
 		sourceColumn: Ordinal
 
