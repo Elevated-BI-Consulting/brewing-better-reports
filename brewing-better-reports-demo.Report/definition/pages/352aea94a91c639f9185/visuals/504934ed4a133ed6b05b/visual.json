@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "504934ed4a133ed6b05b",
+  "position": {
+    "x": 17.424083769633508,
+    "y": 16.083769633507853,
+    "z": 2003,
+    "height": 59.8503740648379,
+    "width": 896.95760598503739,
+    "tabOrder": 1003
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "use case: calculation group selection in button slicer to limit time period groups visible on the page"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -95,6 +95,7 @@ table 'Time Period'
 					)
 
 		calculationItem 'WTD PY Var' = ```
+				
 				-- WTD 
 				
 				VAR _maxdate = 
@@ -159,6 +160,7 @@ table 'Time Period'
 					)
 
 		calculationItem 'WTD PY %Δ' = ```
+				
 				-- WTD 
 				
 				VAR _maxdate = 
@@ -216,10 +218,10 @@ table 'Time Period'
 			formatStringDefinition = "#,##0.0%;(#,##0.0%)"
 
 		calculationItem MTD =
+				
 				VAR _maxdate =
-				    MIN (
-				        -- sets max date for calculation so that TODAY() will be used
-				        MAX ( 'Date'[Date] ) -- in the event that [Date] is not applied as a filter on the visual
+				    MIN (                       -- sets max date for calculation so that TODAY() will be used
+				        MAX ( 'Date'[Date] )    -- in the event that [Date] is not applied as a filter on the visual
 				        , DATE ( 2026, 03, 25 ) -- TODAY()
 				
 				    )
@@ -249,8 +251,9 @@ table 'Time Period'
 					)
 
 		calculationItem 'MTD PY' = ```
+				
 				VAR _maxdate =
-				MIN (                           -- sets max date for calculation so that TODAY() will be used
+				MIN (                       -- sets max date for calculation so that TODAY() will be used
 				    MAX ( 'Date'[Date] )    -- in the event that [Date] is not applied as a filter on the visual
 				    , DATE ( 2026, 03, 25 ) -- TODAY()
 				)
@@ -281,12 +284,13 @@ table 'Time Period'
 					)
 
 		calculationItem 'MTD PY Var' =
+				
 				-- MTD
+				
 				VAR _maxdate =
-				MIN (
-				    -- sets max date for calculation so that TODAY() will be used
-				    MAX ( 'Date'[Date] ) -- in the event that [Date] is not applied as a filter on the visual
-				    ,DATE ( 2026, 03, 25 ) -- TODAY()
+				MIN (                       -- sets max date for calculation so that TODAY() will be used
+				    MAX ( 'Date'[Date] )    -- in the event that [Date] is not applied as a filter on the visual
+				    ,DATE ( 2026, 03, 25 )  -- TODAY()
 				)
 				VAR _mindate =
 				DATE ( YEAR ( _maxdate ), MONTH ( _maxdate ), 1 )
@@ -330,12 +334,13 @@ table 'Time Period'
 					)
 
 		calculationItem 'MTD PY %Δ' = ```
+				
 				-- MTD
+				
 				VAR _maxdate =
-				MIN (
-				    -- sets max date for calculation so that TODAY() will be used
-				    MAX ( 'Date'[Date] ) -- in the event that [Date] is not applied as a filter on the visual
-				    ,DATE ( 2026, 03, 25 ) -- TODAY()
+				MIN (                       -- sets max date for calculation so that TODAY() will be used
+				    MAX ( 'Date'[Date] )    -- in the event that [Date] is not applied as a filter on the visual
+				    ,DATE ( 2026, 03, 25 )  -- TODAY()
 				)
 				VAR _mindate =
 				DATE ( YEAR ( _maxdate ), MONTH ( _maxdate ), 1 )
@@ -380,6 +385,7 @@ table 'Time Period'
 			formatStringDefinition = "#,##0.0%;(#,##0.0%)"
 
 		calculationItem YTD = ```
+				
 				VAR _maxdate =
 				MIN (                          
 				    MAX ( 'Date'[date] ),    
@@ -416,6 +422,7 @@ table 'Time Period'
 					)
 
 		calculationItem 'YTD PY' = ```
+				
 				VAR _maxdate =
 				MIN (                          
 				    MAX ( 'Date'[date] ),    
@@ -453,7 +460,9 @@ table 'Time Period'
 					)
 
 		calculationItem 'YTD PY Var' = ```
+				
 				-- YTD
+				
 				VAR _maxdate =
 				MIN (                          
 				    MAX ( 'Date'[date] ),    
@@ -507,7 +516,9 @@ table 'Time Period'
 					)
 
 		calculationItem 'YTD PY %Δ' = ```
+				
 				-- YTD
+				
 				VAR _maxdate =
 				MIN (                          
 				    MAX ( 'Date'[date] ),    
@@ -561,7 +572,6 @@ table 'Time Period'
 
 	column Ordinal
 		dataType: int64
-		isHidden
 		lineageTag: 445ae466-4f4b-4c77-9e33-818997f83600
 		sourceColumn: Ordinal
 

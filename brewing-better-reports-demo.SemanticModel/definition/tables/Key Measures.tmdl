@@ -13,7 +13,6 @@ table 'Key Measures'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Key Measures Fields'
-		isHidden
 		lineageTag: a4ab5849-bb87-41d7-a0be-2113517b232e
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Key Measures'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Key Measures Order'
-		isHidden
 		formatString: 0
 		lineageTag: 1cba1e6a-1a8d-46f0-a7fb-f6fac847eeb3
 		summarizeBy: sum

@@ -7,11 +7,15 @@ table Account
 		summarizeBy: none
 		sourceColumn: CustomerID
 
+		changedProperty = IsHidden
+
 	column Company
 		dataType: string
 		lineageTag: 94f4ae86-8f5f-4987-96fd-e87a0f10c56b
 		summarizeBy: none
 		sourceColumn: Company
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

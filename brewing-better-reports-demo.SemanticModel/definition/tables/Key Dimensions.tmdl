@@ -13,7 +13,6 @@ table 'Key Dimensions'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Key Dimensions Fields'
-		isHidden
 		lineageTag: 1bbfe587-ef05-4eab-a5b4-eba58ff90393
 		summarizeBy: none
 		sourceColumn: [Value2]
@@ -28,7 +27,6 @@ table 'Key Dimensions'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Key Dimensions Order'
-		isHidden
 		formatString: 0
 		lineageTag: 78e0167b-e944-4da9-b471-797c6288abf9
 		summarizeBy: sum

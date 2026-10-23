@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "352aea94a91c639f9185",
+  "displayName": "final PTD bookmark results",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f6f841d6e338941caffa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Time Period"
+              }
+            },
+            "Property": "Time Period Group"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "360bcd1ab8fd3f4507ba",
+      "target": "612c58369afcb797be73",
+      "type": "NoFilter"
+    },
+    {
+      "source": "360bcd1ab8fd3f4507ba",
+      "target": "cefbbee446d1084483c4",
+      "type": "DataFilter"
+    }
+  ]
+}

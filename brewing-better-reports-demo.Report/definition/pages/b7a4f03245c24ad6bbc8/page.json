@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "b7a4f03245c24ad6bbc8",
+  "displayName": "Date Category",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

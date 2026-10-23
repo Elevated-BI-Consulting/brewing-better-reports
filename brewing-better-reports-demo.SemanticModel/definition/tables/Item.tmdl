@@ -7,11 +7,15 @@ table Item
 		summarizeBy: none
 		sourceColumn: ProductID
 
+		changedProperty = IsHidden
+
 	column ProductName
 		dataType: string
 		lineageTag: b088d19b-6cba-43c7-8907-43caaf833036
 		summarizeBy: none
 		sourceColumn: ProductName
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -21,6 +25,8 @@ table Item
 		summarizeBy: none
 		sourceColumn: Brand
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Supplier
@@ -28,6 +34,8 @@ table Item
 		lineageTag: dc57b7df-ed5f-4304-ba17-5c05c6eb9643
 		summarizeBy: none
 		sourceColumn: Supplier
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

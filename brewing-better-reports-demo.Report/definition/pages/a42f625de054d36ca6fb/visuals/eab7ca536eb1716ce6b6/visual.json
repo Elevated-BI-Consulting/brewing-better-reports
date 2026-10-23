@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "eab7ca536eb1716ce6b6",
+  "position": {
+    "x": 191.46218487394958,
+    "y": 10.756302521008404,
+    "z": 5000,
+    "height": 91.070028011204485,
+    "width": 1074.9131652661065,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "use case: Utilize field parameters to allow for end-users to dynamically select what they want to see."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Can be extended to provide charts/graphs with pre-programmed constraints that ensure visuals load properly to give something other than a table."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Effectively replaces managing 'personalized visuals' without the overhead of training users on how to do it + managing perspectives for clean UI experience."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a15bed755ae72c357957",
+  "position": {
+    "x": 267.17738009463909,
+    "y": 495.18041789184667,
+    "z": 0,
+    "height": 90.786516853932582,
+    "width": 966.29213483146066,
+    "tabOrder": 2000
+  },
+  "visualGroup": {
+    "displayName": "upper page visuals",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -8,6 +8,8 @@ table Invoice
 		displayFolder: Measures\Base
 		lineageTag: fb5c586c-a915-4bab-8be1-9605a241bce6
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isDecimal":true}
 
 	measure Revenue = ```
@@ -20,6 +22,8 @@ table Invoice
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		displayFolder: Measures\Base
 		lineageTag: a1fb8013-03df-41c3-9a8f-6cd1c31ab8df
+
+		changedProperty = IsHidden
 
 	measure 'Units Sold PY' = ```
 			
@@ -49,6 +53,8 @@ table Invoice
 		formatString: #,0
 		displayFolder: Measures\Base
 		lineageTag: f64fc2f5-d6d7-4021-babd-4bdb26bced2d
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
@@ -81,6 +87,8 @@ table Invoice
 		displayFolder: Measures\Base
 		lineageTag: bfd5941e-df64-4799-be22-51b9c02ca833
 
+		changedProperty = IsHidden
+
 	measure 'Units PMTD' = ```
 			
 			CALCULATE ( 
@@ -107,6 +115,8 @@ table Invoice
 		formatString: #,0
 		displayFolder: Measures\Time Intelligence
 		lineageTag: 69c86d80-b5d3-46ba-85a2-4f495ebd09ff
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
@@ -136,6 +146,8 @@ table Invoice
 		displayFolder: Measures\Time Intelligence
 		lineageTag: bc69d5fd-3d21-4dea-b3af-29b3dfc588bb
 
+		changedProperty = IsHidden
+
 	measure 'Units WTD' = ```
 			
 			CALCULATE ( 
@@ -161,6 +173,8 @@ table Invoice
 			```
 		displayFolder: Measures\Time Intelligence
 		lineageTag: c244df9a-2fe1-4405-84a8-11d05c616161
+
+		changedProperty = IsHidden
 
 	measure 'Units PWTD' = ```
 			
@@ -188,9 +202,10 @@ table Invoice
 		displayFolder: Measures\Time Intelligence
 		lineageTag: 996b9306-3f83-4737-bcfb-a074a1239b0a
 
+		changedProperty = IsHidden
+
 	column InvoiceTransID
 		dataType: int64
-		isHidden
 		displayFolder: Columns
 		lineageTag: 2cb6b067-ea4a-4461-83a6-89d8cb3076c2
 		summarizeBy: count
@@ -202,7 +217,6 @@ table Invoice
 
 	column 'Invoice Code'
 		dataType: int64
-		isHidden
 		displayFolder: Columns
 		lineageTag: 6828b4f9-9870-41fd-aeb5-c077c710da3a
 		summarizeBy: count
@@ -214,7 +228,6 @@ table Invoice
 
 	column 'Invoice Date'
 		dataType: dateTime
-		isHidden
 		formatString: M/d/yyyy
 		displayFolder: Columns
 		lineageTag: bb672303-9ef0-406d-8c36-9577deefa4e6
@@ -227,7 +240,6 @@ table Invoice
 
 	column CustomerID
 		dataType: int64
-		isHidden
 		displayFolder: Columns
 		lineageTag: 9c134e23-469d-4c72-b718-010df7f23991
 		summarizeBy: none
@@ -239,7 +251,6 @@ table Invoice
 
 	column ProductID
 		dataType: int64
-		isHidden
 		displayFolder: Columns
 		lineageTag: cb6a7139-c183-4a7b-a4e0-1a0821facc2c
 		summarizeBy: none
@@ -251,7 +262,6 @@ table Invoice
 
 	column Units
 		dataType: int64
-		isHidden
 		displayFolder: Columns
 		lineageTag: a23e815c-4d88-48aa-b80e-51be4d2c071c
 		summarizeBy: sum
@@ -263,7 +273,6 @@ table Invoice
 
 	column MSRP
 		dataType: double
-		isHidden
 		displayFolder: Columns
 		lineageTag: 318882b0-bdae-418b-b03e-1c6aa5cfe54e
 		summarizeBy: sum
@@ -275,7 +284,6 @@ table Invoice
 
 	column UnitPrice
 		dataType: double
-		isHidden
 		displayFolder: Columns
 		lineageTag: 945a1cc6-8339-4c0b-b2ac-a19eeb8617cf
 		summarizeBy: sum
@@ -287,7 +295,6 @@ table Invoice
 
 	column ExtPrice
 		dataType: double
-		isHidden
 		displayFolder: Columns
 		lineageTag: 114e1ee8-e5b4-4cb8-b6f1-77890e02a823
 		summarizeBy: sum

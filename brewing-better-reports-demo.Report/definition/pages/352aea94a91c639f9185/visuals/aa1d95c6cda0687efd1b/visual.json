@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "aa1d95c6cda0687efd1b",
+  "position": {
+    "x": 28.076256499133446,
+    "y": 420.51993067590985,
+    "z": 2000,
+    "height": 59.8503740648379,
+    "width": 896.95760598503739,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "use case: calculation group selection in Filter pane to limit time period groups visible on the page"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
