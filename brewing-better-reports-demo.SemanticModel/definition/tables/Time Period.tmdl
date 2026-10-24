@@ -600,8 +600,6 @@ table 'Time Period'
 			        , 1
 			    , CONTAINSSTRING ( [Name], "MTD" )
 			        , 2
-			    , CONTAINSSTRING ( [Name], "TTD" )
-			        , 3
 			    , CONTAINSSTRING ( [Name], "YTD" )
 			        , 4
 			)

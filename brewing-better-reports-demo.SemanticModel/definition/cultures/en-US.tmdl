@@ -2412,266 +2412,6 @@ cultureInfo en-US
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "date.date.date_hierarchy": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "date hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "date.date.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "moment year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "period year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "date.date.quarter": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Quarter"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.833
-			          }
-			        },
-			        {
-			          "qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.818
-			          }
-			        },
-			        {
-			          "moment quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "period quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "date.date.month": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Month"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "moment month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "period month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "date.date.day": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Day"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "moment day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "period day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
 			    "date.year": {
 			      "Definition": {
 			        "Binding": {
@@ -3342,77 +3082,28 @@ cultureInfo en-US
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "date.week_ending.date_hierarchy": {
+			    "date_category.filter_category": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "week_ending",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy"
+			          "ConceptualEntity": "Date Category",
+			          "ConceptualProperty": "Filter Category"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "week ending date hierarchy": {
+			          "filter category": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "date hierarchy": {
+			          "category": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "ending date hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "date.week_ending.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "week_ending",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "week ending year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "ending year": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "week ending yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "ending yr": {
+			          "filter classification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3422,7 +3113,351 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "yr": {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "filter class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "filter group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "filter type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "filter grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "filter kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "date_category.order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Date Category",
+			          "ConceptualProperty": "Order"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "directive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "demand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "mandate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "imperative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stability": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "harmony": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "date_category.date_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Date Category",
+			          "ConceptualProperty": "Date Category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date category": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "category": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "date classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "date class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "date group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "date type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "date grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "date kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "date_category.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Date Category",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3434,107 +3469,28 @@ cultureInfo en-US
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "date.week_ending.quarter": {
+			    "date_category": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "week_ending",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Quarter"
+			          "ConceptualEntity": "Date Category"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "week ending quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "ending quarter": {
+			          "date category": {
 			            "State": "Generated",
-			            "Weight": 0.97
+			            "Weight": 0.87
 			          }
 			        },
 			        {
-			          "week ending qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.846
-			          }
-			        },
-			        {
-			          "ending qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.833
-			          }
-			        },
-			        {
-			          "qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.818
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "date.week_ending.month": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "week_ending",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Month"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "week ending month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "ending month": {
+			          "category": {
 			            "State": "Generated",
-			            "Weight": 0.97
+			            "Weight": 0.8439
 			          }
 			        },
 			        {
-			          "week ending mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "ending mth": {
+			          "date classification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3544,7 +3500,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "mth": {
+			          "classification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3552,40 +3508,88 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.736
 			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "date.week_ending.day": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Date",
-			          "VariationSource": "week_ending",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Day"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
+			        },
 			        {
-			          "week ending day": {
-			            "State": "Generated"
+			          "date class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
 			          }
 			        },
 			        {
-			          "day": {
-			            "State": "Generated"
+			          "date group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
 			          }
 			        },
 			        {
-			          "ending day": {
-			            "State": "Generated",
-			            "Weight": 0.97
+			          "date type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "date grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "date kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
 			          }
 			        }
-			      ],
-			      "SemanticType": "Time"
+			      ]
 			    },
 			    "date.quarter": {
 			      "Definition": {
@@ -5448,9 +5452,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "ordinal": {
@@ -5723,9 +5724,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "parameter-TimePeriod": {
@@ -5748,9 +5746,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "time period parameter": {
@@ -5879,9 +5874,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "time period parameters field": {
@@ -6037,9 +6029,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "time period parameters order": {
@@ -6051,12 +6040,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "order": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -6454,9 +6437,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "key dimensions field": {
@@ -6599,9 +6579,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "key dimensions order": {
@@ -6613,12 +6590,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "order": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -7015,9 +6986,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "key date dimensions field": {
@@ -7173,9 +7141,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "key date dimensions order": {
@@ -7187,12 +7152,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "order": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -7590,9 +7549,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "key measures field": {
@@ -7735,9 +7691,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "key measures order": {
@@ -7749,12 +7702,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "order": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -7874,349 +7821,6 @@ cultureInfo en-US
 			    }
 			  },
 			  "Relationships": {
-			    "date_date_date_hierarchy_has_date_date_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date.date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "date.date.date_hierarchy"
-			          }
-			        },
-			        "date.date.quarter": {
-			          "Target": {
-			            "Entity": "date.date.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date.date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "date.date.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_quarters"
-			        }
-			      ]
-			    },
-			    "date_date_date_hierarchy_has_date_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date.date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "date.date.date_hierarchy"
-			          }
-			        },
-			        "date.date.year": {
-			          "Target": {
-			            "Entity": "date.date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date.date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "date.date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_years"
-			        }
-			      ]
-			    },
-			    "date_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "date.date": {
-			          "Target": {
-			            "Entity": "date.date"
-			          }
-			        },
-			        "date.date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "date.date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date.date"
-			            },
-			            "Object": {
-			              "Role": "date.date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dates_have_date_hierarchies"
-			        }
-			      ]
-			    },
-			    "invoice_has_account": {
-			      "Binding": {
-			        "ConceptualEntity": "Invoice"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "invoice": {
-			          "Target": {
-			            "Entity": "invoice"
-			          }
-			        },
-			        "account": {
-			          "Target": {
-			            "Entity": "account"
-			          },
-			          "Nouns": [
-			            {
-			              "customer": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "invoice"
-			            },
-			            "Object": {
-			              "Role": "account"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "invoices_have_accounts"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "account"
-			            },
-			            "Object": {
-			              "Role": "invoice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "accounts_have_invoices"
-			        }
-			      ]
-			    },
-			    "invoice_has_item": {
-			      "Binding": {
-			        "ConceptualEntity": "Invoice"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "invoice": {
-			          "Target": {
-			            "Entity": "invoice"
-			          }
-			        },
-			        "item": {
-			          "Target": {
-			            "Entity": "item"
-			          },
-			          "Nouns": [
-			            {
-			              "product": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "invoice"
-			            },
-			            "Object": {
-			              "Role": "item"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "invoices_have_items"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "item"
-			            },
-			            "Object": {
-			              "Role": "invoice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "items_have_invoices"
-			        }
-			      ]
-			    },
-			    "invoice_has_date": {
-			      "Binding": {
-			        "ConceptualEntity": "Invoice"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "invoice": {
-			          "Target": {
-			            "Entity": "invoice"
-			          }
-			        },
-			        "date": {
-			          "Target": {
-			            "Entity": "date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "invoice"
-			            },
-			            "Object": {
-			              "Role": "date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "invoices_have_dates"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date"
-			            },
-			            "Object": {
-			              "Role": "invoice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dates_have_invoices"
-			        }
-			      ]
-			    },
-			    "key_measure_has_key_measure": {
-			      "Binding": {
-			        "ConceptualEntity": "Key Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "key_measure": {
-			          "Target": {
-			            "Entity": "key_measure"
-			          }
-			        },
-			        "key_measure.key_measure": {
-			          "Target": {
-			            "Entity": "key_measure.key_measure"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "key_measure"
-			            },
-			            "Object": {
-			              "Role": "key_measure.key_measure"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "key_measures_have_key_measures"
-			        },
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "key_measure"
-			            },
-			            "Name": {
-			              "Role": "key_measure.key_measure"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "key_measures_are_names_IDs_of_key_measures"
-			        }
-			      ]
-			    },
-			    "key_date_dimension_has_key_date_dimension": {
-			      "Binding": {
-			        "ConceptualEntity": "Key Date Dimensions"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "key_date_dimension": {
-			          "Target": {
-			            "Entity": "key_date_dimension"
-			          }
-			        },
-			        "key_date_dimension.key_date_dimension": {
-			          "Target": {
-			            "Entity": "key_date_dimension.key_date_dimension"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "key_date_dimension"
-			            },
-			            "Object": {
-			              "Role": "key_date_dimension.key_date_dimension"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "key_date_dimensions_have_key_date_dimensions"
-			        },
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "key_date_dimension"
-			            },
-			            "Name": {
-			              "Role": "key_date_dimension.key_date_dimension"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "key_date_dimensions_are_names_IDs_of_key_date_dimensions"
-			        }
-			      ]
-			    },
 			    "key_dimension_has_key_dimension": {
 			      "Binding": {
 			        "ConceptualEntity": "Key Dimensions"
@@ -8260,6 +7864,105 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "key_dimensions_are_names_IDs_of_key_dimensions"
+			        }
+			      ]
+			    },
+			    "parameterTimePeriod_has_time_period_parameters_order": {
+			      "Binding": {
+			        "ConceptualEntity": "Parameter-TimePeriods"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "parameterTimePeriod": {
+			          "Target": {
+			            "Entity": "parameterTimePeriod"
+			          }
+			        },
+			        "parameterTimePeriod.time_period_parameters_order": {
+			          "Target": {
+			            "Entity": "parameterTimePeriod.time_period_parameters_order"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "parameterTimePeriod"
+			            },
+			            "Object": {
+			              "Role": "parameterTimePeriod.time_period_parameters_order"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "parameterTimePeriods_have_time_period_parameters_orders"
+			        }
+			      ]
+			    },
+			    "parameterTimePeriod_has_time_period_parameters_field": {
+			      "Binding": {
+			        "ConceptualEntity": "Parameter-TimePeriods"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "parameterTimePeriod": {
+			          "Target": {
+			            "Entity": "parameterTimePeriod"
+			          }
+			        },
+			        "parameterTimePeriod.time_period_parameters_field": {
+			          "Target": {
+			            "Entity": "parameterTimePeriod.time_period_parameters_field"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "parameterTimePeriod"
+			            },
+			            "Object": {
+			              "Role": "parameterTimePeriod.time_period_parameters_field"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "parameterTimePeriods_have_time_period_parameters_fields"
+			        }
+			      ]
+			    },
+			    "parameterTimePeriod_has_time_period_parameter": {
+			      "Binding": {
+			        "ConceptualEntity": "Parameter-TimePeriods"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "parameterTimePeriod": {
+			          "Target": {
+			            "Entity": "parameterTimePeriod"
+			          }
+			        },
+			        "parameterTimePeriod.time_period_parameter": {
+			          "Target": {
+			            "Entity": "parameterTimePeriod.time_period_parameter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "parameterTimePeriod"
+			            },
+			            "Object": {
+			              "Role": "parameterTimePeriod.time_period_parameter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "parameterTimePeriods_have_time_period_parameters"
 			        }
 			      ]
 			    },
@@ -8326,6 +8029,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "time_periods_have_time_period_groups"
+			        }
+			      ]
+			    },
+			    "time_period_has_ordinal": {
+			      "Binding": {
+			        "ConceptualEntity": "Time Period"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "time_period": {
+			          "Target": {
+			            "Entity": "time_period"
+			          }
+			        },
+			        "time_period.ordinal": {
+			          "Target": {
+			            "Entity": "time_period.ordinal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "time_period"
+			            },
+			            "Object": {
+			              "Role": "time_period.ordinal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "time_periods_have_ordinals"
 			        }
 			      ]
 			    },
@@ -8966,6 +8702,138 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dates_have_quarters"
+			        }
+			      ]
+			    },
+			    "date_category_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Category"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_category": {
+			          "Target": {
+			            "Entity": "date_category"
+			          }
+			        },
+			        "date_category.date": {
+			          "Target": {
+			            "Entity": "date_category.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_category"
+			            },
+			            "Object": {
+			              "Role": "date_category.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_categories_have_dates"
+			        }
+			      ]
+			    },
+			    "date_category_has_date_category": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Category"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_category": {
+			          "Target": {
+			            "Entity": "date_category"
+			          }
+			        },
+			        "date_category.date_category": {
+			          "Target": {
+			            "Entity": "date_category.date_category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_category"
+			            },
+			            "Object": {
+			              "Role": "date_category.date_category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_categories_have_date_categories"
+			        }
+			      ]
+			    },
+			    "date_category_has_order": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Category"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_category": {
+			          "Target": {
+			            "Entity": "date_category"
+			          }
+			        },
+			        "date_category.order": {
+			          "Target": {
+			            "Entity": "date_category.order"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_category"
+			            },
+			            "Object": {
+			              "Role": "date_category.order"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_categories_have_orders"
+			        }
+			      ]
+			    },
+			    "date_category_has_filter_category": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Category"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_category": {
+			          "Target": {
+			            "Entity": "date_category"
+			          }
+			        },
+			        "date_category.filter_category": {
+			          "Target": {
+			            "Entity": "date_category.filter_category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_category"
+			            },
+			            "Object": {
+			              "Role": "date_category.filter_category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_categories_have_filter_categories"
 			        }
 			      ]
 			    },
@@ -10154,86 +10022,112 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "date_date_date_hierarchy_has_date_date_month": {
+			    "key_measure_is_named_key_measure": {
 			      "Binding": {
-			        "ConceptualEntity": "Date"
+			        "ConceptualEntity": "Key Measures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date.date.date_hierarchy": {
+			        "key_measure": {
 			          "Target": {
-			            "Entity": "date.date.date_hierarchy"
+			            "Entity": "key_measure"
 			          }
 			        },
-			        "date.date.month": {
+			        "key_measure.key_measure": {
 			          "Target": {
-			            "Entity": "date.date.month"
+			            "Entity": "key_measure.key_measure"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Attribute": {
+			          "Name": {
 			            "Subject": {
-			              "Role": "date.date.date_hierarchy"
+			              "Role": "key_measure"
 			            },
-			            "Object": {
-			              "Role": "date.date.month"
+			            "Name": {
+			              "Role": "key_measure.key_measure"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_months"
+			          "ID": "key_measures_are_names_IDs_of_key_measures"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key_measure"
+			            },
+			            "Object": {
+			              "Role": "key_measure.key_measure"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "key_measures_have_key_measures"
 			        }
 			      ]
 			    },
-			    "date_date_date_hierarchy_has_date_date_day": {
+			    "key_date_dimension_is_named_key_date_dimension": {
 			      "Binding": {
-			        "ConceptualEntity": "Date"
+			        "ConceptualEntity": "Key Date Dimensions"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date.date.date_hierarchy": {
+			        "key_date_dimension": {
 			          "Target": {
-			            "Entity": "date.date.date_hierarchy"
+			            "Entity": "key_date_dimension"
 			          }
 			        },
-			        "date.date.day": {
+			        "key_date_dimension.key_date_dimension": {
 			          "Target": {
-			            "Entity": "date.date.day"
+			            "Entity": "key_date_dimension.key_date_dimension"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Attribute": {
+			          "Name": {
 			            "Subject": {
-			              "Role": "date.date.date_hierarchy"
+			              "Role": "key_date_dimension"
 			            },
-			            "Object": {
-			              "Role": "date.date.day"
+			            "Name": {
+			              "Role": "key_date_dimension.key_date_dimension"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_days"
+			          "ID": "key_date_dimensions_are_names_IDs_of_key_date_dimensions"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key_date_dimension"
+			            },
+			            "Object": {
+			              "Role": "key_date_dimension.key_date_dimension"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "key_date_dimensions_have_key_date_dimensions"
 			        }
 			      ]
 			    },
-			    "date_week_ending_has_date_hierarchy": {
+			    "key_dimension_has_key_dimensions_field": {
 			      "Binding": {
-			        "ConceptualEntity": "Date"
+			        "ConceptualEntity": "Key Dimensions"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date.week_ending": {
+			        "key_dimension": {
 			          "Target": {
-			            "Entity": "date.week_ending"
+			            "Entity": "key_dimension"
 			          }
 			        },
-			        "date.week_ending.date_hierarchy": {
+			        "key_dimension.key_dimensions_field": {
 			          "Target": {
-			            "Entity": "date.week_ending.date_hierarchy"
+			            "Entity": "key_dimension.key_dimensions_field"
 			          }
 			        }
 			      },
@@ -10241,32 +10135,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date.week_ending"
+			              "Role": "key_dimension"
 			            },
 			            "Object": {
-			              "Role": "date.week_ending.date_hierarchy"
+			              "Role": "key_dimension.key_dimensions_field"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "week_ending_have_week_ending_date_hierarchies"
+			          "ID": "key_dimensions_have_key_dimensions_fields"
 			        }
 			      ]
 			    },
-			    "date_week_ending_date_hierarchy_has_date_week_ending_year": {
+			    "key_dimension_has_key_dimensions_order": {
 			      "Binding": {
-			        "ConceptualEntity": "Date"
+			        "ConceptualEntity": "Key Dimensions"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date.week_ending.date_hierarchy": {
+			        "key_dimension": {
 			          "Target": {
-			            "Entity": "date.week_ending.date_hierarchy"
+			            "Entity": "key_dimension"
 			          }
 			        },
-			        "date.week_ending.year": {
+			        "key_dimension.key_dimensions_order": {
 			          "Target": {
-			            "Entity": "date.week_ending.year"
+			            "Entity": "key_dimension.key_dimensions_order"
 			          }
 			        }
 			      },
@@ -10274,32 +10168,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date.week_ending.date_hierarchy"
+			              "Role": "key_dimension"
 			            },
 			            "Object": {
-			              "Role": "date.week_ending.year"
+			              "Role": "key_dimension.key_dimensions_order"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "week_ending_date_hierarchies_have_week_ending_years"
+			          "ID": "key_dimensions_have_key_dimensions_orders"
 			        }
 			      ]
 			    },
-			    "date_week_ending_date_hierarchy_has_date_week_ending_quarter": {
+			    "key_date_dimension_has_key_date_dimensions_field": {
 			      "Binding": {
-			        "ConceptualEntity": "Date"
+			        "ConceptualEntity": "Key Date Dimensions"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date.week_ending.date_hierarchy": {
+			        "key_date_dimension": {
 			          "Target": {
-			            "Entity": "date.week_ending.date_hierarchy"
+			            "Entity": "key_date_dimension"
 			          }
 			        },
-			        "date.week_ending.quarter": {
+			        "key_date_dimension.key_date_dimensions_field": {
 			          "Target": {
-			            "Entity": "date.week_ending.quarter"
+			            "Entity": "key_date_dimension.key_date_dimensions_field"
 			          }
 			        }
 			      },
@@ -10307,32 +10201,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date.week_ending.date_hierarchy"
+			              "Role": "key_date_dimension"
 			            },
 			            "Object": {
-			              "Role": "date.week_ending.quarter"
+			              "Role": "key_date_dimension.key_date_dimensions_field"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "week_ending_date_hierarchies_have_week_ending_quarters"
+			          "ID": "key_date_dimensions_have_key_date_dimensions_fields"
 			        }
 			      ]
 			    },
-			    "date_week_ending_date_hierarchy_has_date_week_ending_month": {
+			    "key_date_dimension_has_key_date_dimensions_order": {
 			      "Binding": {
-			        "ConceptualEntity": "Date"
+			        "ConceptualEntity": "Key Date Dimensions"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date.week_ending.date_hierarchy": {
+			        "key_date_dimension": {
 			          "Target": {
-			            "Entity": "date.week_ending.date_hierarchy"
+			            "Entity": "key_date_dimension"
 			          }
 			        },
-			        "date.week_ending.month": {
+			        "key_date_dimension.key_date_dimensions_order": {
 			          "Target": {
-			            "Entity": "date.week_ending.month"
+			            "Entity": "key_date_dimension.key_date_dimensions_order"
 			          }
 			        }
 			      },
@@ -10340,32 +10234,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date.week_ending.date_hierarchy"
+			              "Role": "key_date_dimension"
 			            },
 			            "Object": {
-			              "Role": "date.week_ending.month"
+			              "Role": "key_date_dimension.key_date_dimensions_order"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "week_ending_date_hierarchies_have_week_ending_months"
+			          "ID": "key_date_dimensions_have_key_date_dimensions_orders"
 			        }
 			      ]
 			    },
-			    "date_week_ending_date_hierarchy_has_date_week_ending_day": {
+			    "key_measure_has_key_measures_field": {
 			      "Binding": {
-			        "ConceptualEntity": "Date"
+			        "ConceptualEntity": "Key Measures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "date.week_ending.date_hierarchy": {
+			        "key_measure": {
 			          "Target": {
-			            "Entity": "date.week_ending.date_hierarchy"
+			            "Entity": "key_measure"
 			          }
 			        },
-			        "date.week_ending.day": {
+			        "key_measure.key_measures_field": {
 			          "Target": {
-			            "Entity": "date.week_ending.day"
+			            "Entity": "key_measure.key_measures_field"
 			          }
 			        }
 			      },
@@ -10373,15 +10267,246 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "date.week_ending.date_hierarchy"
+			              "Role": "key_measure"
 			            },
 			            "Object": {
-			              "Role": "date.week_ending.day"
+			              "Role": "key_measure.key_measures_field"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "week_ending_date_hierarchies_have_week_ending_days"
+			          "ID": "key_measures_have_key_measures_fields"
+			        }
+			      ]
+			    },
+			    "key_measure_has_key_measures_order": {
+			      "Binding": {
+			        "ConceptualEntity": "Key Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "key_measure": {
+			          "Target": {
+			            "Entity": "key_measure"
+			          }
+			        },
+			        "key_measure.key_measures_order": {
+			          "Target": {
+			            "Entity": "key_measure.key_measures_order"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key_measure"
+			            },
+			            "Object": {
+			              "Role": "key_measure.key_measures_order"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "key_measures_have_key_measures_orders"
+			        }
+			      ]
+			    },
+			    "invoice_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Invoice"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "invoice": {
+			          "Target": {
+			            "Entity": "invoice"
+			          }
+			        },
+			        "date": {
+			          "Target": {
+			            "Entity": "date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "invoice"
+			            },
+			            "Object": {
+			              "Role": "date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "invoices_have_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date"
+			            },
+			            "Object": {
+			              "Role": "invoice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_invoices"
+			        }
+			      ]
+			    },
+			    "invoice_has_item": {
+			      "Binding": {
+			        "ConceptualEntity": "Invoice"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "invoice": {
+			          "Target": {
+			            "Entity": "invoice"
+			          }
+			        },
+			        "item": {
+			          "Target": {
+			            "Entity": "item"
+			          },
+			          "Nouns": [
+			            {
+			              "product": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "invoice"
+			            },
+			            "Object": {
+			              "Role": "item"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "invoices_have_items"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "item"
+			            },
+			            "Object": {
+			              "Role": "invoice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "items_have_invoices"
+			        }
+			      ]
+			    },
+			    "invoice_has_account": {
+			      "Binding": {
+			        "ConceptualEntity": "Invoice"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "invoice": {
+			          "Target": {
+			            "Entity": "invoice"
+			          }
+			        },
+			        "account": {
+			          "Target": {
+			            "Entity": "account"
+			          },
+			          "Nouns": [
+			            {
+			              "customer": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "invoice"
+			            },
+			            "Object": {
+			              "Role": "account"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "invoices_have_accounts"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "account"
+			            },
+			            "Object": {
+			              "Role": "invoice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accounts_have_invoices"
+			        }
+			      ]
+			    },
+			    "date_category_has_date1": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Category"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_category": {
+			          "Target": {
+			            "Entity": "date_category"
+			          }
+			        },
+			        "date": {
+			          "Target": {
+			            "Entity": "date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_category"
+			            },
+			            "Object": {
+			              "Role": "date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_categories_have_dates1"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date"
+			            },
+			            "Object": {
+			              "Role": "date_category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_date_categories"
 			        }
 			      ]
 			    }

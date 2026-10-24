@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "504934ed4a133ed6b05b",
   "position": {
-    "x": 17.424083769633508,
-    "y": 16.083769633507853,
+    "x": 17.424771342417078,
+    "y": 16.39978479286313,
     "z": 2003,
-    "height": 59.8503740648379,
-    "width": 896.95760598503739,
+    "height": 60.474206423682794,
+    "width": 1216.6590343205335,
     "tabOrder": 1003
   },
   "visual": {
@@ -19,7 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "use case: calculation group selection in button slicer to limit time period groups visible on the page"
+                    "value": "use case: calculation group selection in button slicer to limit time period groups visible on the page",
+                    "textStyle": {
+                      "fontSize": "16pt"
+                    }
                   }
                 ]
               }
